@@ -1,6 +1,15 @@
 <div class = "product">
 
-	<div>
+	<div id="ribbon-container" *ngIf="product.salePrice">
+		<!-- will be updated soon -->hi
+	</div>
+
+	<div id="img-container">
+		<img id="product-img"src="https://i.pcmag.com/imagery/reviews/01hmxcWyN13h1LfMglNxHGC-1.fit_scale.size_1028x578.v1589573902.jpg" alt="">
+	</div>
+	
+
+	<div class = "description">
 		<p>{{ this.product.name }}</p>
 		
 		<p>{{ this.product.description }}</p>
@@ -11,7 +20,7 @@
 
 			<span *ngIf="product.salePrice" id="sale-price">${{this.product.salePrice}}</span>
 		</span>
-		
+
 	</div>
 	
 	
