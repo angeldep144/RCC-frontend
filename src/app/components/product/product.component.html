@@ -1,10 +1,19 @@
 <div class = "product">
-	<p>{{ this.product.name }}</p>
-	
-	<p>{{ this.product.description }}</p>
-	
-	<p *ngIf="!product.salePrice" id="product-price">{{ this.product.price }}</p>
-	<p *ngIf="product.salePrice" id="old-price">{{ this.product.price }}</p>
 
-	<p *ngIf="product.salePrice" id="sale-price">{{this.product.salePrice}}</p>
+	<div>
+		<p>{{ this.product.name }}</p>
+		
+		<p>{{ this.product.description }}</p>
+
+		<span id="price-container">
+			<span *ngIf="!product.salePrice" id="product-price">${{ this.product.price }}</span>
+			<span *ngIf="product.salePrice" id="old-price"> ${{ this.product.price }}</span>
+
+			<span *ngIf="product.salePrice" id="sale-price">${{this.product.salePrice}}</span>
+		</span>
+		
+	</div>
+	
+	
+	
 </div>
