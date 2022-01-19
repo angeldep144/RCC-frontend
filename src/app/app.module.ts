@@ -10,6 +10,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ReceiptComponent } from './pages/receipt/receipt.component';
 import { ApiComponent } from './services/api/api.component';
+import { SalesComponent } from './components/sales/sales.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ApiComponent } from './services/api/api.component';
     CartComponent,
     CheckoutComponent,
     ReceiptComponent,
-    ApiComponent
+    ApiComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
