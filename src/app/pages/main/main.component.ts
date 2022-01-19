@@ -13,4 +13,5 @@ export class MainComponent implements OnInit {
   constructor (public dataService : DataService) {}
   
   ngOnInit () : void {}
+
 }
