@@ -28,13 +28,7 @@ export class ApiService {
         }
         
         else {
-          if (body.message.includes ("Unauthorized")) {
-            localStorage.removeItem ("userId");
-          }
-          
-          else {
-            alert (body.message);
-          }
+          alert (body.message);
         }
       }
       
@@ -88,72 +82,5 @@ export class ApiService {
   
   deleteSession = (callback? : Function) => {
     this.handleResponse (this.delete ("session"), callback);
-  }
-  
-  //user
-  
-  createUser = (user : User, callback? : Function) => {
-    this.handleResponse (this.post ("user", user), callback);
-  }
-  
-  getUsers = (callback? : Function) : void => {
-    this.handleResponse (this.get ("user"), callback);
-  }
-  
-  //todo don't use any
-  updateUser = (userData : any, callback? : Function) : void => {
-    this.handleResponse (this.put ("user/" + userData.id.toString (), userData), callback);
-  }
-  
-  //post
-  
-  createPost = (body : string, images : ImageData [], callback? : Function) : void => {
-    this.handleResponse (this.post ("post", {
-      body: body,
-      images: images
-    }), callback);
-  }
-  
-  getPost = (postId : number, callback? : Function) : void => {
-    this.handleResponse (this.get ("post/" + postId.toString ()), callback);
-  }
-  
-  getPosts = (page : number, callback? : Function) : void => {
-    this.handleResponse (this.get ("post?page=" + page.toString ()), callback);
-  }
-  
-  getUserPosts = (userId : number, page : number, callback? : Function) : void => {
-    this.handleResponse (this.get ("post/user?userId=" + userId.toString () + "&page=" + page.toString ()), callback);
-  }
-  
-  //comment
-  
-  createComment = (postId : number, body : string, callback? : Function) : void => {
-    this.handleResponse (this.post ("comment", {
-      postId: postId,
-      body: body
-    }), callback);
-  }
-  
-  //postlike
-  
-  createPostLike = (postId : number, callback? : Function) : void => {
-    this.handleResponse (this.post ("postlike/", {
-      postId: postId
-    }), callback);
-  }
-  
-  deletePostLike = (postId : number, callback? : Function) => {
-    this.handleResponse (this.delete ("postlike/" + postId.toString ()), callback);
-  }
-
-  // password reset (aka Forgot Password?)
-
-  resetPassword = (email : string, callback? : Function, errorCallback? : Function) => {
-    this.handleResponse (this.post ("reset-password", {email: email}), callback, errorCallback);
-  }
-
-  changePassword = (token : string, password: string, callback? : Function, errorCallback? : Function) => {
-    this.handleResponse (this.put ("reset-password", {token: token, password: password}), callback, errorCallback);
   }
 }
