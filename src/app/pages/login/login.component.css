@@ -1,0 +1,35 @@
+.login-component
+{
+    width: 250px;
+    background-color:  #F26925;
+    color: white;
+    box-shadow: 2px 2px 6px rgb(94, 43, 43);
+    border-radius: 8px;
+    margin-top: 50px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #474C55 !important;
+}
+
+/*
+{    
+    background-color: coral;
+    color: white;
+    align-items: center;
+    padding: 4px;  
+    margin: 8px;
+    border-radius: 6px;
+    max-width: 400px;
+    height: 100px;
+    margin: auto;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+}
+*/
