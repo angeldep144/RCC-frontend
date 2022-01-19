@@ -11,8 +11,8 @@ export class ApiServiceService {
   constructor(private httpCli: HttpClient) { }
 
   login(username:string,password:string)
-  {
-    return this.httpCli.post<any>(`this.domain/session`,{
+  {console.log(username)
+    return this.httpCli.post<any>(`${this.domain}/session`,{
       "username":username,
       "password":password
     })
