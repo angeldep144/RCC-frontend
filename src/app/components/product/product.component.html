@@ -3,5 +3,8 @@
 	
 	<p>{{ this.product.description }}</p>
 	
-	<p>{{ this.product.price }}</p>
+	<p *ngIf="!product.salePrice" id="product-price">{{ this.product.price }}</p>
+	<p *ngIf="product.salePrice" id="old-price">{{ this.product.price }}</p>
+
+	<p *ngIf="product.salePrice" id="sale-price">{{this.product.salePrice}}</p>
 </div>

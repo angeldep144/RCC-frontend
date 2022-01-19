@@ -73,7 +73,7 @@ export class DataService {
 			name: "Roomba",
 			description: "Description of the project",
 			price: 52.67,
-			salePrice: 35.00,
+			salePrice: 0,
 			imageUrl: "",
 			stock: 10
 		},
@@ -83,7 +83,7 @@ export class DataService {
 			name: "Roomba",
 			description: "Description of the project",
 			price: 52.67,
-			salePrice: 35.00,
+			salePrice: 0,
 			imageUrl: "",
 			stock: 10
 		},

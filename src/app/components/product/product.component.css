@@ -4,3 +4,8 @@
 	background: darkgray;
 	box-sizing: border-box;
 }
+
+#old-price{
+	text-decoration: line-through;
+	color: red;
+}
