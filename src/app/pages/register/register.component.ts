@@ -37,10 +37,16 @@ export class RegisterComponent implements OnInit {
     console.log(this.user.password)
     if(this.user != null)
     {
-    this.apiServ.register(this.user,undefined,(message:any)=>{
-      this.errMessage = message;
-      console.log(message);
-      if(message.success){this.router.navigate(['login']);}
+    this.apiServ.register(this.user,undefined,(body:any)=>{
+      console.log(body.error);
+      this.errMessage = "wrong username or password";
+      
+      if(body.success==false)
+      {
+        this.errMessage = body.message;
+      }
+      
+      if(body.success){this.router.navigate(['login']);}
     })
     }
   

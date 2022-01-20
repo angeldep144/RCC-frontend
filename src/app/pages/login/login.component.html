@@ -12,7 +12,7 @@
             <br>
             <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
         </div>
-        <div *ngIf="errMsg" class="err">{{errMsg}}</div>
+        <div *ngIf="errMsg" class="err" id= "error-message">{{errMsg}}</div>
         <br>
         <div class="form-item-btn">
             <button class="btn btn-primary" (click)="loginUser()">Login</button>
