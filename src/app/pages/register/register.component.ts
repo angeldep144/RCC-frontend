@@ -25,11 +25,10 @@ export class RegisterComponent implements OnInit {
     let formData:FormData = new FormData();
     formData.append("username", (this.usernameInput));
     formData.append("password", (this.passwordInput));
-    formData.append("user_first_name", (this.firstNameInput));
-    formData.append("user_last_name", (this.lastNameInput));
+    formData.append("firstname", (this.firstNameInput));
+    formData.append("lastname", (this.lastNameInput));
 
     this.apiServ.register(formData).subscribe({next: (responseBody: { data: any; }) => {
-      console.log("this is reponse")
       console.log(responseBody);
       if(responseBody.data){
         this.router.navigate(["../"]);
