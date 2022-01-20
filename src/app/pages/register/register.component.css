@@ -25,9 +25,9 @@ h1{
 
 
 .content {
-    background-color: #FFFFFF;
+    background-color: #da581c;
     width: 500px;
-    height: 650px;
+    height: 550px;
     margin: 7em auto;
     border-radius: 0px;
     box-shadow: 0px 11px 11px rgba(0, 0, 0, 0.14);
@@ -35,7 +35,7 @@ h1{
 
 .register-title {
     padding-top: 40px;
-    color: rgba(0, 0, 2, 0.322);
+    color: whitesmoke;
     font-family: 'Ubuntu', sans-serif;
     font-weight: lighter;
     font-size: 27px;
@@ -46,16 +46,15 @@ h1{
 .un {
 width: 76%;
 color: rgb(38, 50, 56);
-
 font-size: 14px;
 letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
+background: white;
 padding: 10px;
 border: none;
 border-radius: 0px;
 outline: none;
 box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
+border: 2px solid white;
 margin-bottom: 50px;
 margin-left: 56px;
 text-align: center;
@@ -101,11 +100,11 @@ font-family: 'Ubuntu', sans-serif;
     
 }
 
-.login {
+.register {
   cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #001531, #001531);
+    background: black;
     border: 0;
     padding-left: 50px;
     padding-right: 40px;

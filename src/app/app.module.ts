@@ -13,7 +13,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {RegisterComponent} from 'src/app/pages/register/register.component'
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import {RegisterComponent} from 'src/app/pages/register/register.component'
     LoginComponent,
     MainComponent,
     CartComponent,
+    RegisterComponent,
     CheckoutComponent,
     ReceiptComponent,
     HeaderComponent,

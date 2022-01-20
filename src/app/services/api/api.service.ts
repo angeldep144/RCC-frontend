@@ -91,7 +91,7 @@ export class ApiService {
 		this.handleResponse (this.get ("post?searchQuery=" + searchQuery + "&page=" + page), callback, errorCallback);
 	}
 
-	registerUser = (user: User, callback? : Function, errorCallback? : Function) : void => {
+	register = (user: User, callback? : Function, errorCallback? : Function) : void => {
 		this.handleResponse (this.post("user",{
 			user:user
 		}
