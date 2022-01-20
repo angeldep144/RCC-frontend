@@ -26,7 +26,8 @@ import { RegisterComponent } from './pages/register/register.component';
     ReceiptComponent,
     HeaderComponent,
     ProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

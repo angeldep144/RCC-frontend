@@ -3,25 +3,28 @@
 <div class="content">
     <h3 class="register-title">Register</h3>
     <p class="register-note">* Register a valid email as username.</p>
-<form (submit)="registerUser()" class="form1">
+<form (submit)="registerUser()" class="form1" #form="ngForm">
     <div class="err" *ngIf="errMessage">{{errMessage}}</div>
     
     <div class="form-item">
         <!-- <p class="input-name">Email</p> -->
-        <input type="text" id="username" class="un " name="username"  placeholder="Username" [(ngModel)]="usernameInput"> 
+        <input type="text" id="username" class="un " name="username"  placeholder="Username" required [(ngModel)]="usernameInput"> 
     </div>
     <div class="form-item">
-        <input type="password" id="password" class="un " name="password" [(ngModel)]="passwordInput" placeholder="Password"> 
+        <input type="password" id="password" class="un " name="password" required [(ngModel)]="passwordInput" placeholder="Password"> 
     </div>
+
     <div class="form-item">
-        <input type="text" id="firstname" class="un " name="firstName" [(ngModel)]="firstNameInput" placeholder="First Name"> 
+        <input type="text" id="firstname" class="un " name="firstName" required [(ngModel)]="firstNameInput" placeholder="First Name"> 
     </div>
+
     <div class="form-item">
-        <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="Last Name"> 
+        <input type="text" id="lastname" class="un " name="lastName" required [(ngModel)]="lastNameInput" placeholder="Last Name"> 
     </div>
     <!-- <p class="field-note">* All fields are required</p> -->
+
     <div class="form-item">
-        <button class="register" id="register-btn" name="button" >Register</button>
+        <button class="register" id="register-btn" name="button" (click)="registerUser()" [disabled]="!form.form.valid">Register</button>
     </div>    
     <br>
 </form>  

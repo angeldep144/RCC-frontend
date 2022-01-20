@@ -6,5 +6,6 @@ export interface User {
 	lastName : string;
 	username : string;
 	password : string;
+	email: string;
 	cart : Product [];
 };

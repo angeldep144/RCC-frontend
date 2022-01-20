@@ -7,7 +7,7 @@ import {ApiService} from 'src/app/services/api/api.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usernameInput: string = "";
+  identifier: string = "";
   passwordInput: string = "";
 
   constructor(private apiServ:ApiService) { }
@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   loginUser()
   {
-    this.apiServ.createSession(this.usernameInput,this.passwordInput)
+    console.log(this.apiServ.createSession(this.identifier,this.passwordInput))
+    this.apiServ.createSession(this.identifier,this.passwordInput)
   }
 
 }
