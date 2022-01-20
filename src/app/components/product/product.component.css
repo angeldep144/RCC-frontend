@@ -12,6 +12,15 @@
 	margin-top: 10px;
 }
 
+.text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* number of lines to show */
+			line-clamp: 3; 
+	-webkit-box-orient: vertical;
+ }
+
 .on-sale-tag{
 	top: 0;
 	left: 133px;
