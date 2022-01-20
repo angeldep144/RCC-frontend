@@ -1,6 +1,10 @@
 #header {
 	width: 100vw;
-	padding: 10px;
+	padding: 10px 30px;
 	background: rgba(0, 0, 0, .3);
 	box-sizing: border-box;
+}
+
+#header > a {
+	font-family: Mea Culpa;
 }

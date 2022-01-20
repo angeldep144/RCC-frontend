@@ -1,7 +1,25 @@
-<div class = "product" id="{{this.product.id}}">
-	<p>{{ this.product.name }}</p>
+<div class = "product">
+
+	<div id="img-container">
+		<img id="product-img"src="https://i.pcmag.com/imagery/reviews/01hmxcWyN13h1LfMglNxHGC-1.fit_scale.size_1028x578.v1589573902.jpg" alt="">
+		<img *ngIf="product.salePrice" class="on-sale-tag" src="../../../assets/img/on-sale-ribbon.png" alt="">
+	</div>
 	
-	<p>{{ this.product.description }}</p>
+
+	<div class = "description">
+		<p>{{ this.product.name }}</p>
+		
+		<p>{{ this.product.description }}</p>
+
+		<span id="price-container">
+			<span *ngIf="!product.salePrice" id="product-price">${{ this.product.price }}</span>
+			<span *ngIf="product.salePrice" id="old-price"> ${{ this.product.price }}</span>
+
+			<span *ngIf="product.salePrice" id="sale-price">${{this.product.salePrice}}</span>
+		</span>
+
+	</div>
 	
-	<p>{{ this.product.price }}</p>
+	
+	
 </div>

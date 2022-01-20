@@ -1,7 +1,18 @@
+#search {
+	width: 40vw;
+	gap: 5px;
+}
+
+#searchInput {
+	flex-grow: 1;
+}
+
+#searchButton {
+	height: 100%;
+}
+
 #products {
-	padding: 20px;
 	gap: 10px;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	margin: 0 10vw;
 }
