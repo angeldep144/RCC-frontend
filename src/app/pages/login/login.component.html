@@ -1,8 +1,16 @@
-<div class="login-component">
+<div class="content">
+
+    <div class="from1">
+    <div class="form-item">
     <label for ="usernameInput">Username</label>
-    <input type="text" name="usernameInput" id="username" [(ngModel)]="usernameInput">
+    <input type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
+    </div>
+
+    <div class="form-item">
     <label for ="passwordInput">Password</label>
     <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
+    </div>
     <br>
     <button class="btn btn-primary" (click)="loginUser()">Login</button>
+    </div>
 </div>

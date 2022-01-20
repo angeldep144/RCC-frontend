@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-register',
@@ -13,14 +15,15 @@ export class RegisterComponent implements OnInit {
   firstNameInput: string = "";
   lastNameInput: string = "";
   
+  //user:User
 
-  constructor() { }
+  constructor(private apiServ:ApiService) { }
 
   ngOnInit(): void {
   }
 
   registerUser(){
-
+    //this.apiServ.registerUser()
   }
 
 }

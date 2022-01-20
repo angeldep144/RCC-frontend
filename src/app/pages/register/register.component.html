@@ -4,20 +4,23 @@
     <h3 class="register-title">Register</h3>
 <form (submit)="registerUser()" class="form1">
     <div class="err" *ngIf="errMessage">{{errMessage}}</div>
-    <!--
+    
     <div class="form-item">
         <input type="text" id="username" class="un " name="username"  placeholder="username" [(ngModel)]="usernameInput"> 
     </div>
-    -->
+    
     <div class="form-item">
         <input type="password" id="password" class="un " name="password" [(ngModel)]="passwordInput" placeholder="Please enter a password"> 
     </div>
+
     <div class="form-item">
         <input type="text" id="firstname" class="un " name="firstName" [(ngModel)]="firstNameInput" placeholder="First Name"> 
     </div>
+
     <div class="form-item">
         <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="Last Name"> 
     </div>
+
     <div class="form-item">
         <button class="register" id="register-btn" name="button" >Register</button>
     </div>    
