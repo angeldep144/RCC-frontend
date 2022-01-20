@@ -25,7 +25,7 @@ h1{
 
 
 .content {
-    background-color: #da581c;
+    background-color: #F26925;
     width: 500px;
     height: 550px;
     margin: 7em auto;
@@ -41,6 +41,24 @@ h1{
     font-size: 27px;
     display: flex;
     justify-content: center;
+}
+.register-note{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.input-name{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-right: 200px;
+}
+.field-note{
+    color: black;
+    margin-left: 90px;
+    
+
 }
 
 .un {
