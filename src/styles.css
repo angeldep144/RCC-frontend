@@ -14,9 +14,8 @@ body {
 p, pre, a, label {
 	margin: 0;
 	padding: 0;
-	color: white;
 	font-family: Arial;
-	word-break: break-word;
+	word-wrap: break-word;
 }
 
 button, input, textarea {
