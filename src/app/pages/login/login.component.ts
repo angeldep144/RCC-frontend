@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {ApiService} from 'src/app/services/api/api.service'
 
 @Component({
@@ -7,18 +8,27 @@ import {ApiService} from 'src/app/services/api/api.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  errMsg: string = "";
   identifier: string = "";
   passwordInput: string = "";
 
-  constructor(private apiServ:ApiService) { }
+  
+  constructor(private apiServ:ApiService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   loginUser()
   {
+
     console.log(this.apiServ.createSession(this.identifier,this.passwordInput))
-    this.apiServ.createSession(this.identifier,this.passwordInput)
+    this.apiServ.createSession(this.identifier,this.passwordInput,undefined,(body:any)=>{
+      this.errMsg = "Wrong Username or Password"
+      if(body.success){
+        this.router.navigate(["/"])
+      }
+    })
+    
   }
 
 }

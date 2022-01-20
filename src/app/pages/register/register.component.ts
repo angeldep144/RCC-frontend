@@ -16,34 +16,35 @@ export class RegisterComponent implements OnInit {
   lastNameInput: string = "";
   emailInput: string = "";
   //apiServ: any;
-  router: any;
+  //router: any;
   
   user:User=<User>{}
 
-  constructor(private apiServ:ApiService) { }
+  constructor(private apiServ:ApiService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   registerUser(){
-    let formData:FormData = new FormData();
-    formData.append("username", (this.usernameInput));
-    formData.append("password", (this.passwordInput));
-    formData.append("firstname", (this.firstNameInput));
-    formData.append("lastname", (this.lastNameInput));
-    formData.append("email",(this.emailInput));
+   
+    
+    this.user.username = this.usernameInput;
+    this.user.password = this.passwordInput;
+    this.user.firstName = this.firstNameInput;
+    this.user.lastName = this.lastNameInput;
+    this.user.email = this.emailInput;
 
-    /*
-    this.apiServ.register(formData).subscribe({next: (responseBody: { data: any; }) => {
-      console.log(responseBody);
-      if(responseBody.data){
-        this.router.navigate(["../"]);
-      }
-    },
-    error: (badRequest: { error: { response: string; }; }) => {
-      this.errMessage = badRequest.error.response;
-    }})
-    */
+    console.log(this.user.password)
+    if(this.user != null)
+    {
+    this.apiServ.register(this.user,undefined,(message:any)=>{
+      this.errMessage = message;
+      console.log(message);
+      if(message.success){this.router.navigate(['login']);}
+    })
+    }
+  
+    
   }
 
 }

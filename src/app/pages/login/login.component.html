@@ -1,6 +1,6 @@
 <div class="content">
 
-    
+        
         <div class="form-item">
             <label for ="usernameInput">Username</label>
             <br>
@@ -12,9 +12,11 @@
             <br>
             <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
         </div>
+        <div *ngIf="errMsg" class="err">{{errMsg}}</div>
         <br>
         <div class="form-item-btn">
             <button class="btn btn-primary" (click)="loginUser()">Login</button>
         </div>
+        
     
 </div>

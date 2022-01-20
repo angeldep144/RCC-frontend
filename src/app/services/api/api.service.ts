@@ -92,8 +92,13 @@ export class ApiService {
 	}
 
 	register = (user: User, callback? : Function, errorCallback? : Function) : void => {
+		console.log(user)
 		this.handleResponse (this.post("user",{
-			user:user
+			"username":user.username,
+			"password":user.password,
+			"firstName":user.firstName,
+			"lastName":user.lastName,
+			"email":user.email
 		}
 
 		))
