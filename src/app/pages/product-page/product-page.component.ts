@@ -18,8 +18,8 @@ export class ProductPageComponent implements OnInit {
 
 	ngOnInit () : void {
 		this.activatedRoute.params.subscribe (paramaters => {
-			this.apiService.getProduct (parseInt (paramaters ["productId"]), (data : any) : void => {
-				this.product = data.data;
+			this.apiService.getProduct (parseInt (paramaters ["productId"]), (body : any) : void => {
+				this.product = body.data;
 			});
 		});
 	}

@@ -24,8 +24,8 @@ export class MainComponent implements OnInit {
 	};
 	
 	search = () : void => {
-		this.apiService.getProducts (this.searchQuery, this.currentPage, (data : any) : void => {
-			this.dataService.products = data.data;
+		this.apiService.getProducts (this.searchQuery, this.currentPage, (body : any) : void => {
+			this.dataService.products = body.data;
 		});
 	};
 	
