@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { User } from "src/app/models/User";
 import { environment } from "src/environments/environment";
 
 @Injectable ({
@@ -78,6 +79,7 @@ export class ApiService {
 			password: password
 		}), callback, errorCallback);
 	}
+
 	
 	deleteSession = (callback? : Function, errorCallback? : Function) : void => {
 		this.handleResponse (this.delete ("session"), callback, errorCallback);
@@ -91,5 +93,15 @@ export class ApiService {
 	
 	getProduct = (id : number, callback? : Function, errorCallback? : Function) : void => {
 		this.handleResponse (this.get ("product/" + id), callback, errorCallback);
+	};
+	
+	createUser = (user: User, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.post ("user", {
+			firstName: user.firstName,
+			lastName: user.lastName,
+			username: user.username,
+			email: user.email,
+			password: user.password
+		}));
 	};
 }

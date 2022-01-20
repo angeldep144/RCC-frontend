@@ -1,8 +1,18 @@
-<div class="login-component">
-    <label for ="usernameInput">Username</label>
-    <input type="text" name="usernameInput" id="username" [(ngModel)]="usernameInput">
-    <label for ="passwordInput">Password</label>
-    <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
+<div class="content">
+    <div class="form-item">
+        <label for ="usernameInput">Username</label>
+        <br>
+        <input type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
+    </div>
+
+    <div class="form-item">
+        <label for ="passwordInput">Password</label>
+        <br>
+        <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
+    </div>
+    <div *ngIf="errMsg" class="err">{{errMsg}}</div>
     <br>
-    <button class="btn btn-primary" (click)="loginUser()">Login</button>
+    <div class="form-item-btn">
+        <button class="btn btn-primary" (click)="loginUser()">Login</button>
+    </div>
 </div>

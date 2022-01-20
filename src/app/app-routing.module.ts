@@ -6,6 +6,7 @@ import { LoginComponent } from "./pages/login/login.component";
 import { MainComponent } from "./pages/main/main.component";
 import { ProductPageComponent } from "./pages/product-page/product-page.component";
 import { ReceiptComponent } from "./pages/receipt/receipt.component";
+import { RegisterComponent } from "./pages/register/register.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: "checkout",
     component: CheckoutComponent
+  },
+
+  {
+    path: "register",
+    component: RegisterComponent
   },
   
   {

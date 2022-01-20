@@ -13,6 +13,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     MainComponent,
     CartComponent,
+    RegisterComponent,
     CheckoutComponent,
     ReceiptComponent,
     HeaderComponent,
     ProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
