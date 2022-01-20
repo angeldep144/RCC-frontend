@@ -49,12 +49,12 @@
     height: 20px;
 }
 
-#old-price{
+.old-price{
 	text-decoration: line-through;
 	color: red;
 }
 
-#sale-price{
+.sale-price{
 	margin-left: 5px;
 }
 

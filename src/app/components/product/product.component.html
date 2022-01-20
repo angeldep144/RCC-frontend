@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" id="product-{{this.product.id}}">
 
 	<div class="card">
 		<div id="img-container" class="card-img-top">
@@ -10,11 +10,11 @@
 		</div>
 		<div class="card-body description">
 			<p class="card-title mediumFont">{{ this.product.name }}</p>
-			<span class="price-container">
-				<span *ngIf="!product.salePrice" id="product-price">${{ this.product.price }}</span>
-				<span *ngIf="product.salePrice" id="old-price"> ${{ this.product.price }}</span>
+			<span class="price-container mediumFont">
+				<span *ngIf="!product.salePrice" class="product-price">${{ this.product.price }}</span>
+				<span *ngIf="product.salePrice" class="old-price"> ${{ this.product.price }}</span>
 
-				<span *ngIf="product.salePrice" id="sale-price">${{this.product.salePrice}}</span>
+				<span *ngIf="product.salePrice" class="sale-price">${{this.product.salePrice}}</span>
 			</span>
 			<div class="description flex">
 				<p class="text">{{this.product.description}}</p>
