@@ -15,11 +15,23 @@ export class MainComponent implements OnInit {
 	
 	searchQuery : string = "";
 	
+	currentPage : number = 0;
+	
 	ngOnInit () : void {}
 	
+	searchKeyDown = (event : KeyboardEvent) => {
+		if (event.key === "Enter") {
+			this.search ();
+		}
+	};
+	
 	search = () : void => {
-		if (this.searchQuery === "") {
+		if (this.searchQuery.trim () === "") {
 			return;
 		}
+		
+		this.apiService.getProducts (this.searchQuery, this.currentPage, (data : any) : void => {
+			this.dataService.products = data.data;
+		});
 	};
 }

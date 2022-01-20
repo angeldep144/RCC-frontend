@@ -1,5 +1,5 @@
 <div id = "search" class = "flex">
-	<input [(ngModel)] = "searchQuery" id = "searchInput" class = "mediumFont" placeholder = "Search..." />
+	<input [(ngModel)] = "searchQuery" (keydown) = "searchKeyDown ($event);" id = "searchInput" class = "mediumFont" placeholder = "Search..." />
 	
 	<button id = "searchButton" class = "mediumFont" (click) = "search ();">Search</button>
 </div>
