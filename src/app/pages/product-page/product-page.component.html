@@ -1,1 +1,31 @@
-<app-product [product] = "product"></app-product>
+<!-- <app-product [product] = "product"></app-product>
+ -->
+<div class="product">
+
+    <div class = "productImageContainer">
+		<img class = "productImage" src = "https://i.pcmag.com/imagery/reviews/01hmxcWyN13h1LfMglNxHGC-1.fit_scale.size_1028x578.v1589573902.jpg">
+		
+		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
+	</div>
+	
+	<div class = "productInfo flexColumn smallGap">
+		<h3 class = "extraLargeFont">{{ this.product.name }}</h3>
+		
+		<div class = "flex smallGap">
+			<p class = "mediumFont">${{ this.product.salePrice ? this.product.salePrice : this.product.price }}</p>
+			
+			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">${{ this.product.price }}</p>
+		</div>
+		
+		<div class = "flex">
+			<p class = "productDescription smallFont">{{ this.product.description }}</p>
+		</div>
+
+		<form action="" method="post">
+            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput">
+            <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
+            <!-- wait -->
+        </form>
+	</div>
+
+</div>
