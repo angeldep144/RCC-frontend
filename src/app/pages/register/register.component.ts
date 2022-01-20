@@ -14,8 +14,9 @@ export class RegisterComponent implements OnInit {
   passwordInput: string = "";
   firstNameInput: string = "";
   lastNameInput: string = "";
+  emailInput: string = "";
   
-  //user:User
+  user:User=<User>{}
 
   constructor(private apiServ:ApiService) { }
 
@@ -23,7 +24,13 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(){
-    //this.apiServ.registerUser()
+    this.user.username=this.usernameInput;
+    this.user.password=this.passwordInput;
+    this.user.firstName=this.firstNameInput;
+    this.user.lastName=this.lastNameInput;
+    this.user.email=this.emailInput;
+    console.log("register "+this.apiServ.registerUser(this.user));
+    this.apiServ.registerUser(this.user)
   }
 
 }

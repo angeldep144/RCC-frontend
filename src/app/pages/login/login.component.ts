@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   loginUser()
   {
+    console.log(this.apiServ.createSession(this.identifier,this.passwordInput))
     this.apiServ.createSession(this.identifier,this.passwordInput)
   }
 
