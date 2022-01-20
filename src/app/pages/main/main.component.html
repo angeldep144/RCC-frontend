@@ -1,9 +1,9 @@
-<div id = "search" class = "flex">
+<div id = "search" class = "flex smallGap">
 	<input [(ngModel)] = "searchQuery" (keydown) = "searchKeyDown ($event);" id = "searchInput" class = "mediumFont" placeholder = "Search..." />
 	
 	<button id = "searchButton" class = "mediumFont" (click) = "search ();">Search</button>
 </div>
 
-<div id = "products" class = "flex">
+<div id = "products" class = "flex mediumGap">
 	<app-product *ngFor = "let product of this.dataService.products" [product] = "product" ></app-product>
 </div>

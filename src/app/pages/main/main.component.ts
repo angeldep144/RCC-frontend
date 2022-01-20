@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data/data.service';
 	templateUrl: './main.component.html',
 	styleUrls: ['./main.component.css'],
 	host: {
-		class: "page flexColumnTop"
+		class: "page flexColumnTop extraLargeGap"
 	}
 })
 export class MainComponent implements OnInit {
