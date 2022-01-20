@@ -20,7 +20,12 @@
 		<div class = "flex">
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
-		<button id="addToCartBtn">Add to cart</button>
+
+		<form action="" method="post">
+            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput">
+            <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
+            <!-- wait -->
+        </form>
 	</div>
 
 </div>
