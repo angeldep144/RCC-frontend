@@ -11,11 +11,11 @@ import { DataService } from 'src/app/services/data/data.service';
 	}
 })
 export class MainComponent implements OnInit {
-	constructor (public dataService : DataService, private apiService : ApiService) {}
-	
 	searchQuery : string = "";
 	
 	currentPage : number = 0;
+	
+	constructor (public dataService : DataService, private apiService : ApiService) {}
 	
 	searchKeyDown = (event : KeyboardEvent) => {
 		if (event.key === "Enter") {

@@ -4,10 +4,14 @@
 
 #searchInput {
 	flex-grow: 1;
+	background: white;
+	border: 1px solid rgba(0, 0, 0, .5);
 }
 
 #searchButton {
 	height: 100%;
+	background: white;
+	border: 1px solid rgba(0, 0, 0, .5);
 }
 
 #products {
