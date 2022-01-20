@@ -79,3 +79,11 @@
 	z-index: 2;
 	position: absolute, fixed;
 }
+
+.card-title{
+	margin-top: 0;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+}
+
