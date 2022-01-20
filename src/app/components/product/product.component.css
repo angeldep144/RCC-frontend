@@ -5,20 +5,28 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	
 }
 
 .description{
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	/* justify-content: end; */
 	
+}
+
+.on-sale-tag{
+	top: 0;
+	left: 133px;
+	width: 60px;
+	position: absolute;
 }
 
 #img-container{
 	display: flex;
 	justify-content: center;
+	position: relative;
 
 }
 #product-img{
@@ -39,6 +47,7 @@
 
 }
 
+
 #ribbon-point{
 	width: 0;
     height: 0;
@@ -50,8 +59,8 @@
 #ribbon-container{
 	display: flex;
 	justify-content: right;
-	height: 20px;
-	margin-bottom:20;
+	/* height: 20px; */
+	/* margin-bottom:20; */
 	
 }
 
