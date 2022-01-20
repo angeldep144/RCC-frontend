@@ -2,9 +2,12 @@
 
 <div class="content">
     <h3 class="register-title">Register</h3>
+    <p class="register-note">* Register a valid email as username.</p>
 <form (submit)="registerUser()" class="form1">
     <div class="err" *ngIf="errMessage">{{errMessage}}</div>
+    
     <div class="form-item">
+        <!-- <p class="input-name">Email</p> -->
         <input type="text" id="username" class="un " name="username"  placeholder="Username" [(ngModel)]="usernameInput"> 
     </div>
     <div class="form-item">
@@ -16,6 +19,7 @@
     <div class="form-item">
         <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="Last Name"> 
     </div>
+    <!-- <p class="field-note">* All fields are required</p> -->
     <div class="form-item">
         <button class="register" id="register-btn" name="button" >Register</button>
     </div>    
