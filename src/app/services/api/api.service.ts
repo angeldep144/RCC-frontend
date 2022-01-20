@@ -86,6 +86,6 @@ export class ApiService {
 	//product
 	
 	getProducts = (searchQuery : string, page : number, callback? : Function, errorCallback? : Function) : void => {
-		this.handleResponse (this.get ("post?searchQuery=" + searchQuery + "&page=" + page), callback, errorCallback);
+		this.handleResponse (this.get ("product?searchQuery=" + searchQuery + "&page=" + page), callback, errorCallback);
 	}
 }
