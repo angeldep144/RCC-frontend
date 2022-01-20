@@ -1,7 +1,13 @@
 <div class = "product">
 
 	<div id="ribbon-container" *ngIf="product.salePrice">
-		<!-- will be updated soon -->hi
+		<span id="ribbon-point"></span>
+		<span id="ribbon"> SALE </span>
+		<!-- will be updated soon -->
+	</div>
+	<div id="ribbon-container" *ngIf="!product.salePrice">
+		
+		<!-- will be updated soon -->
 	</div>
 
 	<div id="img-container">
