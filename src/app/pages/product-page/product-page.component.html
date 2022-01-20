@@ -9,7 +9,7 @@
 	</div>
 	
 	<div class = "productInfo flexColumn smallGap">
-		<p class = "mediumFont">{{ this.product.name }}</p>
+		<h3 class = "extraLargeFont">{{ this.product.name }}</h3>
 		
 		<div class = "flex smallGap">
 			<p class = "mediumFont">${{ this.product.salePrice ? this.product.salePrice : this.product.price }}</p>
@@ -20,6 +20,7 @@
 		<div class = "flex">
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
+		<button id="addToCartBtn">Add to cart</button>
 	</div>
 
 </div>
