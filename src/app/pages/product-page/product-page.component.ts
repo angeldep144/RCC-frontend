@@ -13,7 +13,8 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class ProductPageComponent implements OnInit {
 	public product : Product = <Product> {};
-	
+	public quantityInput: number = 1;
+		
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService) {}
 
 	ngOnInit () : void {
@@ -22,5 +23,14 @@ export class ProductPageComponent implements OnInit {
 				this.product = body.data;
 			});
 		});
+	}
+
+	addToCart(quantityInput: number){
+		console.log(quantityInput, this.product.id);
+		//will take in product id and quantity added
+		//post request to cart
+		//returns message to user, items added to cart
+		// if successful, will show method
+		
 	}
 }
