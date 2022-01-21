@@ -14,6 +14,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegisterComponent } from './pages/register/register.component';
     HeaderComponent,
     ProductComponent,
     ProductPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
