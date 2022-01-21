@@ -8,11 +8,11 @@
     <div class="form-item">
         <label for ="passwordInput">Password</label>
         <br>
-        <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
-    </div>
-    <div *ngIf="errMsg" class="err">{{errMsg}}</div>
-    <br>
-    <div class="form-item-btn">
-        <button class="btn btn-primary" (click)="loginUser()">Login</button>
-    </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" id="login" (click)="loginUser()">Login</button>
+            <button class="btn btn-primary" id="register" (click)="goToReg()">Register</button>
+        </div>
+    
+        
+    
 </div>
