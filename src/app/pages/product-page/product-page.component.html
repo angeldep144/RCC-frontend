@@ -1,7 +1,4 @@
-<!-- <app-product [product] = "product"></app-product>
- -->
 <div class="product">
-
     <div class = "productImageContainer">
 		<img class = "productImage" src = "https://i.pcmag.com/imagery/reviews/01hmxcWyN13h1LfMglNxHGC-1.fit_scale.size_1028x578.v1589573902.jpg">
 		
@@ -21,11 +18,10 @@
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
 
-		<form action="" method="post">
-            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput">
+		<div>
+            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
             <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
             <!-- wait -->
-        </form>
+        </div>
 	</div>
-
 </div>
