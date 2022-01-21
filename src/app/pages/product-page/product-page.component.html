@@ -22,9 +22,10 @@
 		</div>
 
 		<form action="" method="post">
-            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput">
+            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input)="onQuantityInput($event)">
             <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
-            <!-- wait -->
+			<div *ngIf="cartMessage">Added items to cart</div>
+            
         </form>
 	</div>
 
