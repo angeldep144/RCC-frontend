@@ -33,9 +33,6 @@
 	box-sizing: border-box;
 }
 
-.productDescription {
-}
-
 .oldPrice {
 	text-decoration: line-through;
 	color: red;
@@ -49,7 +46,8 @@
 }
 
 #quantity{
-    margin-left: 5px;
+    margin-right: 10px;
+	width: 70px;
 }
 
 .extraLargeFont{

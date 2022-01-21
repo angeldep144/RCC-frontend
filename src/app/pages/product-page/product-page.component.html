@@ -1,7 +1,4 @@
-<!-- <app-product [product] = "product"></app-product>
- -->
 <div class="product">
-
     <div class = "productImageContainer">
 		<img class = "productImage" src = {{product.imageUrl}}>
 		
@@ -20,12 +17,12 @@
 		<div class = "flex">
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
-
-		<form action="" method="post">
-            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput">
+		
+		<div>
+            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
             <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
+            <div *ngIf="cartMessage">Added items to cart</div>
             <!-- wait -->
-        </form>
+        </div>
 	</div>
-
 </div>
