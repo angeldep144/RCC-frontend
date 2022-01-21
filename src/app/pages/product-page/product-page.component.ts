@@ -30,13 +30,15 @@ export class ProductPageComponent implements OnInit {
 	}
 	
 	addToCart = (quantityInput : number) : void => {
-		console.log (quantityInput, this.product.id);
-		//will take in product id and quantity added
-		//post request to cart
-		//returns message to user, items added to cart
-		// if successful, will show method
 		this.inCartBtn = false;
-		this.cartMessage = true;
+		
+		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
+			this.cartMessage = true;
+			
+			setTimeout (() => {
+				this.cartMessage = false;
+			}, 3000);
+		});
 	}
 	
 	ngOnInit () : void {
@@ -46,14 +48,4 @@ export class ProductPageComponent implements OnInit {
 			});
 		});
 	}
-
-	ngDoCheck(){
-		if(this.cartMessage === true){
-			setTimeout( () =>{
-				this.cartMessage = false;
-			}, 3000)
-		}
-	}
-
-	
 }
