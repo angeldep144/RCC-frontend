@@ -10,5 +10,8 @@
 
 #header > a:first-child {
 	font-family: Mea Culpa;
+}
+
+#header a {
 	color: black;
 }
