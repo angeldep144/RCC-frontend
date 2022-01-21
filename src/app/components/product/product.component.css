@@ -10,6 +10,7 @@
 
 .productImageContainer {
 	position: relative;
+	max-height: 140px;
 }
 
 .productImage {

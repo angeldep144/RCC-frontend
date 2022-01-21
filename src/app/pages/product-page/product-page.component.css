@@ -1,6 +1,4 @@
 .product {
-	/* width: 250px; */
-	/* height: auto; */
 	background: rgba(255, 255, 255, .5);
 	box-sizing: border-box;
 	border-radius: 4px;
@@ -10,7 +8,7 @@
 }
 
 .productImageContainer {
-	padding: 10px 10px 5px 10px;
+	padding: 10px;
 	position: relative;
 }
 
@@ -36,12 +34,6 @@
 }
 
 .productDescription {
-	/* overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow-wrap: anywhere; */
 }
 
 .oldPrice {
