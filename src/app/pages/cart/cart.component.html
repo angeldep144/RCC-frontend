@@ -1,3 +1,3 @@
-<div id = "products" class = "flex mediumGap">
-	<app-product *ngFor = "let product of this.dataService.products" [product] = "product"></app-product>
+<div id = "products" class = "flexColumn mediumGap">
+	<app-cart-item *ngFor = "let cartItem of this.dataService.user.cart" [product] = "cartItem.product"></app-cart-item>
 </div>
