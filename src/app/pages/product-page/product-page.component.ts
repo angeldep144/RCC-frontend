@@ -13,8 +13,10 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class ProductPageComponent implements OnInit {
 	public product : Product = <Product> {};
-	public quantityInput : number = 1;
-		
+	
+	public quantityInput: number = 1;
+	cartMessage: boolean = false;
+	
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService) {}
 	
 	onQuantityInput = (event : any) : void => {
@@ -32,6 +34,7 @@ export class ProductPageComponent implements OnInit {
 		//post request to cart
 		//returns message to user, items added to cart
 		// if successful, will show method
+		this.cartMessage = true;
 	}
 	
 	ngOnInit () : void {
