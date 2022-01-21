@@ -22,15 +22,16 @@
             <div *ngIf = "inCart; then trueBlock else falseBlock"></div>
 			
 			<ng-template #trueBlock>
-				<!-- todo max might need to be less than stock -->
-				<input type="number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+				<button id = "goToCartBtn" type = "button" routerLink = "/cart">Go to Cart</button>
 				
-				<button id = "addToCartBtn" type = "button" (click) = "addToCart (quantityInput);">Add to cart</button>
+				<div *ngIf = "cartMessage" id = "cartMessage">Added to cart</div>
 			</ng-template>
 			
 			<ng-template #falseBlock>
-				<button id = "goToCartBtn" type = "button" routerLink = "/cart">Go to Cart</button>
-            	<div *ngIf = "cartMessage" id = "cartMessage">Added items to cart</div>
+				<!-- todo max might need to be less than stock -->
+				<input type = "number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+				
+				<button id = "addToCartBtn" type = "button" (click) = "addToCart (quantityInput);">Add to cart</button>
 			</ng-template>
         </div>
 	</div>
