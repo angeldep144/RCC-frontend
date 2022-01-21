@@ -11,6 +11,12 @@ export class DataService {
 	public products : Product [] = [];
 	
 	constructor () {
-		this.user = localStorage ["user"] || {};
+		this.user = JSON.parse (localStorage ["user"]);
 	}
+	
+	updateUser = (user : User) : void => {
+		this.user = user;
+		
+		localStorage ["user"] = JSON.stringify (user);
+	};
 }

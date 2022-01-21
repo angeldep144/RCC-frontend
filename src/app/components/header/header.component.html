@@ -4,7 +4,7 @@
 	<div *ngIf = "dataService.user.username" class = "flex largeGap">
 		<p>{{ dataService.user.firstName }} {{ dataService.user.lastName }}</p>
 		
-		<div>🛒 {{ dataService.user.cart.length }}</div>
+		<a routerLink = "/cart">🛒 {{ dataService.user.cart.length }}</a>
 		
 		<a (click) = "logout ();">Logout</a>
 	</div>

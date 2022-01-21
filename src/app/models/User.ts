@@ -8,5 +8,6 @@ export interface User {
 	username : string;
 	password : string;
 	email: string;
+	//todo change to object that maps productId to quantity
 	cart : CartItem [];
 };
