@@ -33,9 +33,6 @@
 	box-sizing: border-box;
 }
 
-.productDescription {
-}
-
 .oldPrice {
 	text-decoration: line-through;
 	color: red;
