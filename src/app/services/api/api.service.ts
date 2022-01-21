@@ -79,7 +79,6 @@ export class ApiService {
 			password: password
 		}), callback, errorCallback);
 	}
-
 	
 	deleteSession = (callback? : Function, errorCallback? : Function) : void => {
 		this.handleResponse (this.delete ("session"), callback, errorCallback);
@@ -104,6 +103,15 @@ export class ApiService {
 			username: user.username,
 			email: user.email,
 			password: user.password
-		}));
+		}), callback, errorCallback);
+	};
+	
+	//cartitem
+	
+	createCartItem = (productId : number, quantity : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.post ("cartitem", {
+			productId: productId,
+			quantity: quantity
+		}), callback, errorCallback);
 	};
 }

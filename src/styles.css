@@ -18,7 +18,11 @@ p, pre, a, label {
 	word-wrap: break-word;
 	text-align: center;
 	text-decoration: none;
-	color: black;
+	color: black !important;
+}
+
+a {
+	cursor: pointer;
 }
 
 button, input, textarea {

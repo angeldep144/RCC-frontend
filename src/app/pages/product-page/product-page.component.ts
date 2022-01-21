@@ -29,12 +29,9 @@ export class ProductPageComponent implements OnInit {
 	}
 	
 	addToCart = (quantityInput : number) : void => {
-		console.log (quantityInput, this.product.id);
-		//will take in product id and quantity added
-		//post request to cart
-		//returns message to user, items added to cart
-		// if successful, will show method
-		this.cartMessage = true;
+		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
+			this.cartMessage = true;
+		});
 	}
 	
 	ngOnInit () : void {

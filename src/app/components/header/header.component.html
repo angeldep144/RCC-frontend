@@ -1,3 +1,17 @@
 <div id = "header" class = "flexLeft">
 	<a routerLink = "/" class = "extraLargeFont flex">Revature Courseware Cornucopia</a>
+	
+	<div *ngIf = "dataService.user.username" class = "flex largeGap">
+		<p>{{ dataService.user.firstName }} {{ dataService.user.lastName }}</p>
+		
+		<div>🛒 {{ dataService.user.cart.length }}</div>
+		
+		<a (click) = "logout ();">Logout</a>
+	</div>
+	
+	<div *ngIf = "!dataService.user.username && router.url !== '/login' && router.url !== '/register'" class = "flex largeGap">
+		<a routerLink = "/register">Register</a>
+		
+		<a routerLink = "/login">Login</a>
+	</div>
 </div>
