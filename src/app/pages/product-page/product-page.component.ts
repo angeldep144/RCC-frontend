@@ -16,6 +16,7 @@ export class ProductPageComponent implements OnInit {
 	
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
+	inCartBtn: boolean = true;
 	
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService) {}
 	
@@ -29,8 +30,14 @@ export class ProductPageComponent implements OnInit {
 	}
 	
 	addToCart = (quantityInput : number) : void => {
+		this.inCartBtn = false;
+		
 		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
 			this.cartMessage = true;
+			
+			setTimeout (() => {
+				this.cartMessage = false;
+			}, 3000);
 		});
 	}
 	
