@@ -14,10 +14,19 @@
     padding:20px;
 }
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #474C55 !important;
+    background-color: black !important;
     color: white;
     border-radius: 4px;
+    
 }
+.btn-container
+{
+    justify-content: space-between;
+    padding-left: 80px;
+    justify-content: center;
+    
+}
+
 
 .err{
     color: red;

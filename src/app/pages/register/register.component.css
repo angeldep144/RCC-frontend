@@ -23,7 +23,12 @@ h1{
     justify-content: center;
     background-color: black;
 }
-
+.btn-container
+{
+    justify-content: space-between;
+    padding-left: 120px;
+    justify-content: center;
+}
 
 .content {
     background-color: #F26925;

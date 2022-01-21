@@ -14,9 +14,11 @@
         </div>
         <div *ngIf="errMsg" class="err" id= "error-message">{{errMsg}}</div>
         <br>
-        <div class="form-item-btn">
-            <button class="btn btn-primary" (click)="loginUser()">Login</button>
+        <div class="btn-container">
+            <button class="btn btn-primary" id="login" (click)="loginUser()">Login</button>
+            <button class="btn btn-primary" id="register" (click)="goToReg()">Register</button>
         </div>
+    
         
     
 </div>
