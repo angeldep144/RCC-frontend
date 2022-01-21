@@ -19,9 +19,10 @@ export class LoginComponent implements OnInit {
 
   loginUser()
   {
-    console.log(this.apiServ.createSession(this.identifier,this.passwordInput))
     this.apiServ.createSession(this.identifier,this.passwordInput,undefined,(body:any)=>{
-      this.errMsg = "Wrong Username or Password"
+      console.log(body.error);
+      this.errMsg = "wrong username or password";
+      
       if(body.success){
         this.router.navigate(["/"])
       }

@@ -22,12 +22,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(private apiServ:ApiService,private router:Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   registerUser(){
-   
-    
     this.user.username = this.usernameInput;
     this.user.password = this.passwordInput;
     this.user.firstName = this.firstNameInput;
@@ -35,16 +32,18 @@ export class RegisterComponent implements OnInit {
     this.user.email = this.emailInput;
 
     console.log(this.user.password)
-    if(this.user != null)
-    {
-    this.apiServ.createUser(this.user,undefined,(message:any)=>{
-      this.errMessage = message;
-      console.log(message);
-      if(message.success){this.router.navigate(['login']);}
-    })
+    if(this.user != null) {
+      this.apiServ.createUser(this.user,undefined,(body:any)=>{
+        console.log(body.error);
+        this.errMessage = "wrong username or password";
+        
+        if(body.success==false)
+        {
+          this.errMessage = body.message;
+        }
+        
+        if(body.success){this.router.navigate(['login']);}
+      })
     }
-  
-    
   }
-
 }

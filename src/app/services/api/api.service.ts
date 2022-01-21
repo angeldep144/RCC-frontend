@@ -95,6 +95,8 @@ export class ApiService {
 		this.handleResponse (this.get ("product/" + id), callback, errorCallback);
 	};
 	
+	//user
+	
 	createUser = (user: User, callback? : Function, errorCallback? : Function) : void => {
 		this.handleResponse (this.post ("user", {
 			firstName: user.firstName,
