@@ -19,11 +19,12 @@
 		</div>
 		
 		<div class= "cart-container">
-            <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
-            
-			<div *ngIf = "inCartBtn; then trueBlock else falseBlock"></div>
+            <div *ngIf = "inCart; then trueBlock else falseBlock"></div>
 			
 			<ng-template #trueBlock>
+				<!-- todo max might need to be less than stock -->
+				<input type="number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+				
 				<button id = "addToCartBtn" type = "button" (click) = "addToCart (quantityInput);">Add to cart</button>
 			</ng-template>
 			

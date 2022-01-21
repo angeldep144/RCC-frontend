@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ApiService } from 'src/app/services/api/api.service';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
 	selector: 'app-product-page',
@@ -16,9 +17,9 @@ export class ProductPageComponent implements OnInit {
 	
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
-	inCartBtn: boolean = true;
+	inCart: boolean = true;
 	
-	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService) {}
+	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, private dataService : DataService) {}
 	
 	onQuantityInput = (event : any) : void => {
 		//todo allow backspacing but when unfocus set to 1 if still blank
@@ -30,9 +31,13 @@ export class ProductPageComponent implements OnInit {
 	}
 	
 	addToCart = (quantityInput : number) : void => {
-		this.inCartBtn = false;
+		this.inCart = false;
 		
 		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
+			
+			this.dataService.user.cart = body.data;
+			localStorage ["user"] = JSON.stringify(this.dataService.user);
+			
 			this.cartMessage = true;
 			
 			setTimeout (() => {
@@ -45,6 +50,10 @@ export class ProductPageComponent implements OnInit {
 		this.activatedRoute.params.subscribe (paramaters => {
 			this.apiService.getProduct (parseInt (paramaters ["productId"]), (body : any) : void => {
 				this.product = body.data;
+				
+				for (let i = 0; i < this.dataService.user.cart.length; i++) {
+					
+				}
 			});
 		});
 	}
