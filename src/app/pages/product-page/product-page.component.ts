@@ -16,6 +16,7 @@ export class ProductPageComponent implements OnInit {
 	
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
+	inCartBtn: boolean = true;
 	
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService) {}
 	
@@ -34,6 +35,7 @@ export class ProductPageComponent implements OnInit {
 		//post request to cart
 		//returns message to user, items added to cart
 		// if successful, will show method
+		this.inCartBtn = false;
 		this.cartMessage = true;
 	}
 	
@@ -44,4 +46,14 @@ export class ProductPageComponent implements OnInit {
 			});
 		});
 	}
+
+	ngDoCheck(){
+		if(this.cartMessage === true){
+			setTimeout( () =>{
+				this.cartMessage = false;
+			}, 3000)
+		}
+	}
+
+	
 }

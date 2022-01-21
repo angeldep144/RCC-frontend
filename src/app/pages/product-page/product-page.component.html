@@ -18,11 +18,18 @@
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
 		
-		<div>
+		<div class= "cart-container">
             <input type="number" id="quantity" name="quantityInput" min="1" max="{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
-            <button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
-            <div *ngIf="cartMessage">Added items to cart</div>
-            <!-- wait -->
+            
+			<div *ngIf="inCartBtn; then trueBlock else falseBlock"></div>
+			<ng-template #trueBlock>
+				<button id="addToCartBtn" type="button" (click)="addToCart(quantityInput)">Add to cart</button>
+			</ng-template>
+			
+			<ng-template #falseBlock>
+				<button id="goToCartBtn" type="button" routerLink = "/cart">Go to Cart</button>
+            	<div *ngIf="cartMessage" id="cartMessage">Added items to cart</div>
+			</ng-template>
         </div>
 	</div>
 </div>

@@ -45,9 +45,21 @@
 	border-radius: 3px;
 }
 
+#goToCartBtn{
+	margin-top: 15px;
+	background-color: mediumseagreen;
+	border: 1px solid black;
+	border-radius: 3px;
+}
+
 #quantity{
     margin-right: 10px;
 	width: 70px;
+}
+
+#cartMessage{
+	margin-top: 5px;
+	color: red;
 }
 
 .extraLargeFont{
