@@ -11,7 +11,9 @@ export class DataService {
 	public products : Product [] = [];
 	
 	constructor () {
-		this.user = JSON.parse (localStorage ["user"]);
+		if (localStorage ["user"] !== undefined) {
+			this.user = JSON.parse (localStorage ["user"]);
+		}
 	}
 	
 	updateUser = (user : User) : void => {

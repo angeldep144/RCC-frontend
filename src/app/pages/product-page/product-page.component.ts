@@ -17,7 +17,7 @@ export class ProductPageComponent implements OnInit {
 	
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
-	inCart: boolean = true;
+	inCart: boolean = false;
 	
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, private dataService : DataService) {}
 	
@@ -31,7 +31,7 @@ export class ProductPageComponent implements OnInit {
 	}
 	
 	addToCart = (quantityInput : number) : void => {
-		this.inCart = false;
+		this.inCart = true;
 		
 		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
 			
@@ -52,7 +52,11 @@ export class ProductPageComponent implements OnInit {
 				this.product = body.data;
 				
 				for (let i = 0; i < this.dataService.user.cart.length; i++) {
-					
+					if (this.product.id === this.dataService.user.cart [i].product.id) {
+						this.inCart = true;
+						
+						break;
+					}
 				}
 			});
 		});
