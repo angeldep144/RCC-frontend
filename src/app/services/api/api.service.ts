@@ -4,12 +4,13 @@ import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { User } from "src/app/models/User";
 import { environment } from "src/environments/environment";
+import { DataService } from "../data/data.service";
 
 @Injectable ({
 	providedIn: "root"
 })
 export class ApiService {
-	constructor (private httpClient : HttpClient, private router : Router) {}
+	constructor (private httpClient : HttpClient, private router : Router, public dataService: DataService) {}
 	
 	handleResponse = async (response : Observable <any>, callback? : Function, errorCallback? : Function) : Promise <any> => {
 		const handler = async (body : any) : Promise <any> => {
@@ -29,6 +30,12 @@ export class ApiService {
 				
 				else {
 					alert (body.message);
+				}
+				
+				// Session is stale or server restarted, delete user information from data service and local storage
+				// This is a 401 error created by throwing "UnauthorizedException" on backend which will redirect frontend to login page
+				if (body.message=="Error! Unauthorized") {
+					this.dataService.updateUser (<User> {});
 				}
 			}
 			
