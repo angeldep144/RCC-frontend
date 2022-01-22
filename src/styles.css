@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background: #bff0ff;
+	background: #960000;
 }
 
 p, pre, a, label {
@@ -18,6 +18,7 @@ p, pre, a, label {
 	word-wrap: break-word;
 	text-align: center;
 	text-decoration: none;
+	color: var(--theme-foreground-color);
 }
 
 a {
@@ -29,7 +30,8 @@ button, input, textarea {
 	border: none;
 	padding: 10px;
 	box-sizing: border-box;
-	background: white;
+	background: var(--theme-background-color);
+	color: var(--theme-foreground-color);
 }
 
 button {
@@ -64,7 +66,7 @@ button {
 
 .page {
 	width: 100%;
-	height: 93.5vh;
+	height: 92.5vh;
 	flex-grow: 1;
 	overflow-y: scroll;
 	padding: 20px 10vw;
