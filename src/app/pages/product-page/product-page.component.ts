@@ -51,11 +51,13 @@ export class ProductPageComponent implements OnInit {
 			this.apiService.getProduct (parseInt (paramaters ["productId"]), (body : any) : void => {
 				this.product = body.data;
 				
-				for (let i = 0; i < this.dataService.user.cart.length; i++) {
-					if (this.product.id === this.dataService.user.cart [i].product.id) {
-						this.inCart = true;
-						
-						break;
+				if (this.dataService.user.username) {
+					for (let i = 0; i < this.dataService.user.cart.length; i++) {
+						if (this.product.id === this.dataService.user.cart [i].product.id) {
+							this.inCart = true;
+							
+							break;
+						}
 					}
 				}
 			});

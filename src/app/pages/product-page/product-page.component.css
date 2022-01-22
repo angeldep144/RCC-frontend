@@ -1,5 +1,5 @@
 .product {
-	background: rgba(255, 255, 255, .5);
+	background: var(--theme-background-color);
 	box-sizing: border-box;
 	border-radius: 4px;
     display: flex;
