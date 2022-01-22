@@ -1,5 +1,5 @@
 <div routerLink = "/product/{{ this.product.id }}" id="product#{{this.product.id}}" class = "product flexColumn mediumGap">
-	<div class = "productImageContainer">
+	<div class = "productImageContainer flex">
 		<img class = "productImage" src = {{product.imageUrl}}>
 		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
 	</div>
