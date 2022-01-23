@@ -8,7 +8,7 @@
 }
 
 #div1 {
-    width:50%;
+    width:90%;
     margin-right: 10px;
     margin-bottom: 5px;
     margin-top: 10px;
@@ -22,8 +22,9 @@ justify-content:space-between;
 
 #div2 {
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     /* border: red solid 1px; */
+    width: 50%;
 }
 
 .mb-3 {
@@ -38,4 +39,21 @@ justify-content:space-between;
     height:75px;
     /* border: green solid 1px; */ 
     border-radius:5px;
+}
+
+#checkout {
+border: black solid 1px;
+width:25%;
+background-color: white;
+}
+
+#container {
+    display: flex;
+   /*  border:grey solid 1px; */
+    justify-content: center;
+}
+
+#content {
+    margin-left: 15px;
+    margin-top:10px;
 }
