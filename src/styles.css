@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background: #960000;
+	background: rgba(212, 210, 210, 0.993);
 }
 
 p, pre, a, label {
