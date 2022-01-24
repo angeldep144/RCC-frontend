@@ -128,7 +128,16 @@
 <div class="cart-container">
 
     <div>
-        <p> </p>
+        <!-- <div id = "cartContainer" class = "flex largeGap">
+            <div id = "cartItems" class = "flexColumn mediumGap">
+                <app-cart-item *ngFor = "let cartItem of dataService.user.cart" [cartItem] = "cartItem"></app-cart-item>
+            </div>
+            
+            <div id = "cartTotals" class = "flexColumnTop">
+                <p>Total Items: {{ dataService.user.cart.length }}</p>
+                <p *ngFor = "let cartItem of dataService.user.cart">quantity: {{cartItem.quantity}}</p>
+            </div>
+        </div> -->
 
     </div>
 
