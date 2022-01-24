@@ -1,55 +1,29 @@
-<div id = "cartContainer" class = "flex largeGap">
-	<div id = "cartItems" class = "flexColumn mediumGap">
+<div id = "cartContainer" class = "flexTop largeGap">
+	<div id = "cartItems" class = "flexColumnTop mediumGap">
 		<app-cart-item *ngFor = "let cartItem of dataService.user.cart" [cartItem] = "cartItem"></app-cart-item>
 	</div>
 	
-	<div id = "cartTotals" class = "flexColumnTop">
-		<p>Total Items: {{ dataService.user.cart.length }}</p>
-		<p *ngFor = "let cartItem of dataService.user.cart">quantity: {{cartItem.quantity}}</p>
-	</div>
-</div>
-
-<!-- <div id="container">	
-	<div id="div2">
-		<h5>Total Items: 2</h5>
-		<div id="div1">
-		<div id="picdiv">
-			<img src="" class="img-fluid img-thumbnail" alt="...">
-		  </div>
-		<div class="mb-3">
-			<span>Name </span><br>
-			<span>$20</span><br>
-			<button id="remove" type="button" class="btn btn-danger">Remove</button>
-		  </div>
-		  <div id="qtycontainer">
-		  <input id="quantity" type="number">
-		</div>
+	<div id = "cartTotals" class = "flexColumnTop mediumGap">
+		<div class = "flex smallGap">
+			<p class = "smallFont">Subtotal:</p>
+			
+			<p class = "smallFont">{{ subtotal | currency }}</p>
 		</div>
 		
-		<div id="div1">
-		<div id="picdiv">
-			<img src="" class="img-fluid img-thumbnail" alt="...">
-		  </div>
-		<div class="mb-3">
-			<span>Name </span><br>
-			<span>$20</span><br>
-			<button id="remove" type="button" class="btn btn-danger">Remove</button>
-		  </div>
-		  <div id="qtycontainer">
-			<input id="quantity" type="number">
-		  </div>
+		<div *ngIf = "sales > 0" class = "flex smallGap">
+			<p class = "smallFont">Sales:</p>
+			
+			<p class = "smallFont">- {{ sales | currency }}</p>
+		</div>
+		
+		<div class = "flex smallGap">
+			<p class = "smallFont">Total:</p>
+			
+			<p class = "smallFont">{{ total | currency }}</p>
+		</div>
+		
+		<div class = "cartControls flexRight">
+			<button class = "cartButton smallFont" type = "button" routerLink = "/checkout">Checkout</button>
 		</div>
 	</div>
-	
-	<div id="checkout">
-		<div id="content">
-			<span>Subtotal: $60</span>
-			
-			<span>Sales: -$20</span>
-			
-			<span>Total: $40</span>
-			
-			<button type="button" class="btn btn-primary">Checkout</button>
-		</div>
-	</div>
-</div> -->
+</div>

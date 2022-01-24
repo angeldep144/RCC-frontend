@@ -45,9 +45,21 @@ button {
 	align-items: center;
 }
 
+.flexTop {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 .flexLeft {
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
+}
+
+.flexRight {
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -119,10 +131,18 @@ button {
 
 .oldPrice {
 	text-decoration: line-through;
-	color: red;
+	color: #AAA;
 }
 
 .quantityInput {
 	width: 70px;
 	background: var(--theme-color-3);
+}
+
+.cartControls {
+	margin-top: 10px;
+}
+
+.cartButton {
+	background-color: mediumseagreen;
 }

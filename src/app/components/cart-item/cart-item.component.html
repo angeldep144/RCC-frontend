@@ -17,6 +17,9 @@
 		</div>
 	</div>
 	
-	<!-- todo max might need to be less than stock -->
-	<input type = "number" class = "quantityInput" min = "1" max = "{{ cartItem.product.stock }}" [(ngModel)] = cartItem.quantity>
+	<div class = "flex largeGap">
+		<input type = "number" class = "quantityInput smallFont" [(ngModel)] = cartItem.quantity (input) = "onQuantityInput ($event);">
+		
+		<a class = "mediumFont" (click) = "removeFromCart ();">🗑️</a>
+	</div>
 </div>

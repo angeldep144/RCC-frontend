@@ -32,12 +32,3 @@
 	flex-grow: 1;
 	box-sizing: border-box;
 }
-
-.cartContainer {
-	margin-top: 10px;
-}
-
-.cartButton {
-	background-color: mediumseagreen;
-	border-radius: 4px;
-}

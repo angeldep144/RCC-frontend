@@ -18,17 +18,16 @@
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
 		
-		<div *ngIf = "!inCart" class = "cartContainer flex smallGap">
-			<!-- todo max might need to be less than stock -->
-			<input type = "number" class = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+		<div *ngIf = "!inCart" class = "cartControls flex smallGap">
+			<input type = "number" class = "quantityInput smallFont" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
 			
-			<button class = "cartButton" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
+			<button class = "cartButton smallFont" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
 		</div>
 		
-		<div *ngIf = "inCart" class = "cartContainer flexColumn smallGap">
-			<button class = "cartButton" type = "button" routerLink = "/cart">Go to Cart</button>
+		<div *ngIf = "inCart" class = "cartControls flexColumn smallGap">
+			<button class = "cartButton smallFont" type = "button" routerLink = "/cart">Go to Cart</button>
 			
-			<p *ngIf = "cartMessage" id = "cartMessage">Added to Cart</p>
+			<p *ngIf = "cartMessage smallFont" id = "cartMessage">Added to Cart</p>
 		</div>
 	</div>
 </div>

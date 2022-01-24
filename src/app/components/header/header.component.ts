@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
 		
 		localStorage ["darkTheme"] = enabled;
 		
-		document.documentElement.style.setProperty ("--theme-color-1", this.darkTheme ? "#444" : "#EEE");
+		document.documentElement.style.setProperty ("--theme-color-1", this.darkTheme ? "#333" : "#EEE");
 		document.documentElement.style.setProperty ("--theme-color-2", this.darkTheme ? "rgba(0, 0, 0, .3)" : "rgba(255, 255, 255, .75)");
 		document.documentElement.style.setProperty ("--theme-color-3", this.darkTheme ? "#444" : "white");
 		document.documentElement.style.setProperty ("--theme-color-4", this.darkTheme ? "white" : "black");
