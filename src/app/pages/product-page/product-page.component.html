@@ -1,11 +1,11 @@
 <div class = "product flex">
-    <div class = "productImageContainer flex">
+	<div class = "productImageContainer flex">
 		<img class = "productImage" src = {{product.imageUrl}}>
 		
 		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
 	</div>
 	
-	<div class = "productInfo flexColumn mediumGap">
+	<div class = "productInfo flexColumn smallGap">
 		<p class = "extraLargeFont">{{ this.product.name }}</p>
 		
 		<div class = "flex smallGap">
@@ -20,7 +20,7 @@
 		
 		<div *ngIf = "!inCart" class = "cartContainer flex smallGap">
 			<!-- todo max might need to be less than stock -->
-			<input type = "number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+			<input type = "number" class = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
 			
 			<button class = "cartButton" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
 		</div>

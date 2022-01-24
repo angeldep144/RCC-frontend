@@ -121,4 +121,8 @@ export class ApiService {
 			quantity: quantity
 		}), callback, errorCallback);
 	};
+	
+	getCartItems = (callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.get ("cartitem"), callback, errorCallback);
+	};
 }

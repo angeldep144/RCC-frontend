@@ -23,6 +23,7 @@ p, pre, a, label {
 
 a {
 	cursor: pointer;
+	outline: none;
 }
 
 button, input, textarea {
@@ -62,6 +63,13 @@ button {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+.flexColumnLeft {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .page {
@@ -107,4 +115,14 @@ button {
 
 .extraLargeGap {
 	gap: 20px;
+}
+
+.oldPrice {
+	text-decoration: line-through;
+	color: red;
+}
+
+.quantityInput {
+	width: 70px;
+	background: var(--theme-color-3);
 }

@@ -35,8 +35,15 @@ export class ProductPageComponent implements OnInit {
 		this.inCart = true;
 		
 		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
-			this.dataService.user.cart.push (<CartItem> {});
+			this.dataService.user.cart.push (<CartItem> {
+				product: <Product> {
+					id: this.product.id
+				},
+				
+				quantity: this.quantityInput
+			});
 			
+			//todo refactor
 			this.dataService.updateUser (this.dataService.user);
 			
 			this.cartMessage = true;

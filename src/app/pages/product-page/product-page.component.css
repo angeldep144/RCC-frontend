@@ -33,17 +33,11 @@
 	box-sizing: border-box;
 }
 
-.oldPrice {
-	text-decoration: line-through;
-	color: red;
+.cartContainer {
+	margin-top: 10px;
 }
 
 .cartButton {
 	background-color: mediumseagreen;
 	border-radius: 4px;
-}
-
-#quantity {
-	width: 70px;
-	background: var(--theme-color-3);
 }
