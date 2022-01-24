@@ -69,3 +69,9 @@
 #cartMessage{
 	text-align: center;
 }
+
+/* ------------ADMIN TEAM ADDITIONS ------------ */
+
+.edit{
+    background-color: var(--theme-background-color);
+}

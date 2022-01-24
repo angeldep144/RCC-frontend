@@ -8,15 +8,33 @@
 	<div class = "productInfo flexColumn smallGap">
 		<p class = "extraLargeFont">{{ this.product.name }}</p>
 		
-		<div class = "flex smallGap">
-			<p class = "mediumFont">${{ this.product.salePrice ? this.product.salePrice : this.product.price }}</p>
-			
-			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">${{ this.product.price }}</p>
-		</div>
-		
-		<div class = "flex">
-			<p class = "productDescription smallFont">{{ this.product.description }}</p>
-		</div>
+		<form action="">
+            <br>
+
+            <label for="sale-price">Name</label>
+            <br>
+            <input type="text" class = "edit price-input" value="{{ this.product.name }}">
+
+            <br>
+
+            <label for="sale-price">Product Description</label>
+            <br>
+            <textarea type="text" class = "edit description-input" cols="40" maxlength="255" value="{{ this.product.description }}"></textarea>
+
+            <br>
+
+            <label for="sale-price">Regular Price</label>
+            <br>
+            <label for="price-input">$</label>
+            <input type="text" class = "edit price-input" value="{{ this.product.price }}">
+
+            <br>
+
+            <label for="sale-input">Sale Price</label>
+            <br>
+            <label for="sale-input">$</label>
+            <input type="text" class = "edit sale-input" value="{{ this.product.salePrice }}" placeholder="No current sale">
+        </form>
 		
 	</div>
 </div>
