@@ -5,23 +5,27 @@
     <h3 class="register-title">Register</h3>
 <form (submit)="registerUser()" class="form1" ngNativeValidate>
     <div class="err" id= "error-message"*ngIf="errMessage">{{errMessage}}</div>
-    
     <div class="form-item">
-        <input type="text" id="username" class="un " name="username"  placeholder="Username" [(ngModel)]="usernameInput" required="required"> 
+        <label class="label" for ="usernameInput">Username</label>
+        <input type="text" id="username" class="un " name="username"  placeholder="" [(ngModel)]="usernameInput" required="required"> 
     </div>
     <div class="form-item">
-        <input type="password" id="password" class="un " name="password" [(ngModel)]="passwordInput" placeholder="Password" required="required"> 
-    </div>
-
-    <div class="form-item">
-        <input type="text" id="firstname" class="un " name="firstName" [(ngModel)]="firstNameInput" placeholder="First Name" required="required"> 
+        <label class="label" for ="passwordInput">Password</label>
+        <input type="password" id="password" class="un " name="password" [(ngModel)]="passwordInput" placeholder="" required="required"> 
     </div>
 
     <div class="form-item">
-        <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="Last Name" required="required"> 
+        <label class="label" for ="firstNameInput">First Name</label>
+        <input type="text" id="firstname" class="un " name="firstName" [(ngModel)]="firstNameInput" placeholder="" required="required"> 
+    </div>
+
+    <div class="form-item">
+        <label class="label" for ="lastNameInput">Last Name</label>
+        <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="" required="required"> 
     </div>
     <div class="form-item">
-        <input type="text" id="email" class="un " name="email" [(ngModel)]="emailInput" placeholder="email" required="required"> 
+        <label class="label" for ="emailInput">Email</label>
+        <input type="text" id="email" class="un " name="email" [(ngModel)]="emailInput" placeholder="" required="required"> 
     </div>
     <!-- <p class="field-note">* All fields are required</p> -->
 

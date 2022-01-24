@@ -1,16 +1,17 @@
 <div class="content">
-
+    <h3 class="login-title">Login</h3>
+    <form class="form1" ngNativeValidate>
         
         <div class="form-item">
-            <label for ="usernameInput">Username</label>
+            <label class="label" for ="usernameInput">Username</label>
             <br>
-            <input type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
+            <input class="un" type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
         </div>
 
         <div class="form-item">
-            <label for ="passwordInput">Password</label>
+            <label class="label" for ="passwordInput">Password</label>
             <br>
-            <input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
+            <input class="un" type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
         </div>
         <div *ngIf="errMsg" class="err" id= "error-message">{{errMsg}}</div>
         <br>
@@ -19,6 +20,4 @@
             <button class="btn btn-primary" id="register" (click)="goToReg()">Register</button>
         </div>
     
-        
     
-</div>
