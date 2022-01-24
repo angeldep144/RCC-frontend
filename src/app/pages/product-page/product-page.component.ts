@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/services/api/api.service';
@@ -22,7 +22,7 @@ export class ProductPageComponent implements OnInit {
 
 	userRole: string = "USER";
 	
-	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, private dataService : DataService) {}
+	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, private dataService : DataService, private router: Router) {}
 	
 
 	onQuantityInput = (event : any) : void => {
@@ -50,9 +50,6 @@ export class ProductPageComponent implements OnInit {
 		});
 	}
 
-	editProduct(id: number) {
-
-	}
 	
 	ngOnInit () : void {
 		this.activatedRoute.params.subscribe (paramaters => {
@@ -75,5 +72,10 @@ export class ProductPageComponent implements OnInit {
 		if (this.dataService.user){
 			this.userRole = this.dataService.user.role;
 		}
+	}
+
+	/* ADMIN TEAM ADDITION */
+	editProduct(id: number) {
+		this.router.navigate([`/admin/${this.product.id}`]);
 	}
 }

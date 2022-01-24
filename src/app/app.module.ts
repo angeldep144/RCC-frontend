@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     ProductComponent,
     ProductPageComponent,
     RegisterComponent,
-    CartItemComponent
+    CartItemComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
