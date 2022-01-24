@@ -1,7 +1,7 @@
 
 
-<div class="checkout-container">
-    <div id="shipping-form"> 
+<div class="checkout-container-whole">
+    <div id="shipping-form" class="checkout-container" > 
         <h2 id="checkout-title"> Checkout</h2>
         <h5> Enter your Shipping Address</h5>
         <form class="row g-3 ">
@@ -41,7 +41,7 @@
             <label for="inputState" class="form-label">State</label>
             <select id="inputState" class="form-select" name="states" [(ngModel)]="checkout.states">
                 <option value="" selected>Choose...</option>
-                <option>...</option>
+                <option *ngFor="let obj of checkout.states">{{obj.name}}</option>
             </select>
             </div>
             <div class="col-md-2">
@@ -54,15 +54,12 @@
             </div>
         </form>
     </div>
-    <div id="Billing-form" *ngIf="!this.useShipping"> 
-        <h2 id="checkout-title"> Checkout</h2>
-        <h5> Enter your Shipping Address</h5>
+    <div class="billing-container" *ngIf="!this.useShipping" >
+
+    <div id="Billing-form" > 
+            <h2 id="billing-title"> Billing Information</h2>
+            <h5> Enter your Billing Address</h5>
         <form class="row g-3 ">
-            
-            <div class="col-12">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">First Name</label>
                 <input type="first-name" class="form-control" id="input-first-name">
@@ -99,7 +96,8 @@
               <button type="submit" class="btn btn-primary">Submit order</button>
             </div>
           </form>
-        </div>
+    </div>
+    </div>
 
     
 </div>
