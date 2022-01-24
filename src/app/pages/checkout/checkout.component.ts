@@ -19,11 +19,15 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleBilling(){
+  toggleBilling = () => {
     this.useShipping = !this.useShipping
     console.log(this.useShipping);
   }
 
-  
+  completeTransaction = () => {
+
+    //
+  }
+
 
 }

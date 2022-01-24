@@ -1,7 +1,7 @@
 
 
-<div class="checkout-container-whole">
-    <div id="shipping-form" class="checkout-container" > 
+<div class="checkout-container">
+    <div id="shipping-form" class="shipping-container" > 
         <h2 id="checkout-title"> Checkout</h2>
         <h5> Enter your Shipping Address</h5>
         <form class="row g-3 ">
@@ -49,9 +49,7 @@
             <input type="text" class="form-control" id="inputZip">
             </div>
             
-            <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit order</button>
-            </div>
+    
         </form>
     </div>
     <div class="billing-container" *ngIf="!this.useShipping" >
@@ -62,42 +60,78 @@
         <form class="row g-3 ">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="first-name" class="form-control" id="input-first-name">
+                <input type="first-name" class="form-control" id="input-first-name-billing">
               </div>
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Last Name</label>
-                <input type="last-name" class="form-control" id="input-last-name">
+                <input type="last-name" class="form-control" id="input-last-name-billing">
               </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="inputAddress-billing" placeholder="1234 Main St">
             </div>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <input type="text" class="form-control" id="inputAddress2-billing" placeholder="Apartment, studio, or floor">
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input type="text" class="form-control" id="inputCity-billing">
             </div>
             <div class="col-md-4">
               <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
+              <select id="inputState-billing" class="form-select" name="states" [(ngModel)]="checkout.states">
+                <option value="" selected>Choose...</option>
+                <option *ngFor="let obj of checkout.states">{{obj}</option>
+            </select>
             </div>
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
+              <input type="text" class="form-control" id="inputZip-billing">
             </div>
+            
+           
+          </form>
+    </div>
+    </div>
+    <div class="card-container">
+        <form class="row g-2 ">
+        
+                
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Debit/Credit Card Number</label>
+              <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" class="form-control" id = "input-card-number">
+            </div>
+            <div class="col-3">
+              <label for="inputAddress2" class="form-label">CVV</label>
+              <input type="tel" maxlength="4" class="form-control" id="inputAddress2" placeholder="Ex. 123">
+            </div>
+            
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">MM</label>
+              <input type="number" class="form-control" id="input-month">
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">YY</label>
+                <input type="number"  min="22" class="form-control" id="input-year">
+              </div>
             
             <div class="col-12">
               <button type="submit" class="btn btn-primary">Submit order</button>
             </div>
           </form>
     </div>
-    </div>
 
     
+</div>
+
+<div class="cart-container">
+
+    <div>
+        <p> </p>
+
+    </div>
+
+
+
 </div>

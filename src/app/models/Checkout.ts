@@ -1,6 +1,6 @@
 export class CheckoutCart 
 {
-    states :any = [
+    states :Array<any> = [
         {
             "name": "Alabama",
             "abbreviation": "AL"
