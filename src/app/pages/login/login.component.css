@@ -15,9 +15,9 @@ h1{
 .err{
     color: red;
     display: flex;
+    font-weight: bold;
     justify-content: center;
     margin-top: 10px;
-    background-color: black;
 }
 .btn-container
 {
@@ -29,7 +29,7 @@ h1{
 .content {
     background-color: #FCB414;
     width: 500px;
-    height: 375px;
+    height: 30%;
     margin: 7em auto;
     border-radius: 8px;
     box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.14);
