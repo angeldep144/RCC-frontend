@@ -3,7 +3,7 @@
 	height: 7.5vh;
 	padding: 10px 30px;
 	box-sizing: border-box;
-	background: var(--theme-background-color);
+	background: var(--theme-color-2);
 	justify-content: space-between;
 }
 
@@ -12,7 +12,7 @@
 }
 
 #header a {
-	color: var(--theme-foreground-color);
+	color: var(--theme-color-4);
 }
 
 #cart-btn {

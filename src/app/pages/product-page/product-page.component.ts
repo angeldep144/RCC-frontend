@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartItem } from 'src/app/models/CartItem';
 import { Product } from 'src/app/models/Product';
 import { ApiService } from 'src/app/services/api/api.service';
 import { DataService } from 'src/app/services/data/data.service';
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data/data.service';
 	templateUrl: './product-page.component.html',
 	styleUrls: ['./product-page.component.css'],
 	host: {
-		class: "page flexColumnTop extraLargeGap"
+		class: "page flexColumnTop"
 	}
 })
 export class ProductPageComponent implements OnInit {
@@ -34,9 +35,9 @@ export class ProductPageComponent implements OnInit {
 		this.inCart = true;
 		
 		this.apiService.createCartItem (this.product.id, this.quantityInput, (body : any) : void => {
+			this.dataService.user.cart.push (<CartItem> {});
 			
-			this.dataService.user.cart = body.data;
-			localStorage ["user"] = JSON.stringify(this.dataService.user);
+			this.dataService.updateUser (this.dataService.user);
 			
 			this.cartMessage = true;
 			

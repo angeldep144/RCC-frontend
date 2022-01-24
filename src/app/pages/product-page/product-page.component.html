@@ -1,11 +1,11 @@
-<div class="product">
-    <div class = "productImageContainer">
+<div class = "product flex">
+    <div class = "productImageContainer flex">
 		<img class = "productImage" src = {{product.imageUrl}}>
 		
 		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
 	</div>
 	
-	<div class = "productInfo flexColumn smallGap">
+	<div class = "productInfo flexColumn mediumGap">
 		<p class = "extraLargeFont">{{ this.product.name }}</p>
 		
 		<div class = "flex smallGap">
@@ -18,21 +18,17 @@
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
 		
-		<div class= "cart-container">
-            <div *ngIf = "inCart; then trueBlock else falseBlock"></div>
+		<div *ngIf = "!inCart" class = "cartContainer flex smallGap">
+			<!-- todo max might need to be less than stock -->
+			<input type = "number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
 			
-			<ng-template #trueBlock>
-				<button id = "goToCartBtn" type = "button" routerLink = "/cart">Go to Cart</button>
-				
-				<div *ngIf = "cartMessage" id = "cartMessage">Added to cart</div>
-			</ng-template>
+			<button class = "cartButton" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
+		</div>
+		
+		<div *ngIf = "inCart" class = "cartContainer flexColumn smallGap">
+			<button class = "cartButton" type = "button" routerLink = "/cart">Go to Cart</button>
 			
-			<ng-template #falseBlock>
-				<!-- todo max might need to be less than stock -->
-				<input type = "number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
-				
-				<button id = "addToCartBtn" type = "button" (click) = "addToCart (quantityInput);">Add to cart</button>
-			</ng-template>
-        </div>
+			<p *ngIf = "cartMessage" id = "cartMessage">Added to Cart</p>
+		</div>
 	</div>
 </div>
