@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminNewProductComponent } from './pages/admin-new-product/admin-new-product.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     ProductPageComponent,
     RegisterComponent,
     CartItemComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    AdminNewProductComponent
   ],
   imports: [
     BrowserModule,

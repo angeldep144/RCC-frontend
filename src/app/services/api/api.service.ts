@@ -109,6 +109,13 @@ export class ApiService {
 		});
 	}
 	
+	//Admin team addition
+	createNewProduct(formData:FormData){
+		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
+			console.log(responseBody);
+		});
+	}
+	
 	//user
 	
 	createUser = (user: User, callback? : Function, errorCallback? : Function) : void => {

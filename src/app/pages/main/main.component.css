@@ -15,3 +15,9 @@
 #products {
 	flex-wrap: wrap;
 }
+
+#new-product {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+}
