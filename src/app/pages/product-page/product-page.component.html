@@ -18,7 +18,7 @@
 			<p class = "productDescription smallFont">{{ product.description }}</p>
 		</div>
 		
-		<ng-template [ngIf] = "product.stock > 0 && dataService.user.username" [ngIfElse] = "outOfStock">
+		<ng-template [ngIf] = "product.stock > 0 && dataService.user.username">
 			<div *ngIf = "!inCart" class = "cartControls flex smallGap">
 				<input [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);" class = "quantityInput mediumFont" type = "number">
 				
@@ -32,8 +32,6 @@
 			</div>
 		</ng-template>
 		
-		<ng-template #outOfStock>
-			<p class = "errorMessage mediumFont">Out of stock!</p>
-		</ng-template>
+		<p *ngIf = "product.stock < 1" class = "errorMessage mediumFont">Out of stock!</p>
 	</div>
 </div>
