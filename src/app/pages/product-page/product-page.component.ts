@@ -69,8 +69,9 @@ export class ProductPageComponent implements OnInit {
 		});
 
 		/* ADMIN TEAM ADDITION */
+		console.log(this.dataService);
 		if (this.dataService.user){
-			this.userRole = this.dataService.user.role;
+			this.userRole = this.dataService.user.role.role;
 		}
 	}
 

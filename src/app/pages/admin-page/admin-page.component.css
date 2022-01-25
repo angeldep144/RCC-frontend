@@ -1,10 +1,17 @@
 .product {
+	margin-top: 15px;
 	background: var(--theme-background-color);
 	box-sizing: border-box;
 	border-radius: 4px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
+}
+
+.usd-sign{
+	
+	padding: 3px 8px 6px 0px;
+	font-size: x-large;
 }
 
 .productImageContainer {

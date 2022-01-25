@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Form } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { Product } from "src/app/models/Product";
 import { User } from "src/app/models/User";
 import { environment } from "src/environments/environment";
 import { DataService } from "../data/data.service";
@@ -121,5 +123,12 @@ export class ApiService {
 			quantity: quantity
 		}), callback, errorCallback);
 	};
+
+	updateProductItem(formData:FormData){
+	
+		this.httpClient.patch<any>("http://localhost:81/product", formData).subscribe(responseBody => {
+			console.log(responseBody);
+		});
+	}
 
 }
