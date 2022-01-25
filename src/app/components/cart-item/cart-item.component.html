@@ -10,9 +10,9 @@
 			<p class = "mediumFont">{{ cartItem.product.name }}</p>
 			
 			<div class = "flex smallGap">
-				<p class = "mediumFont">{{ (cartItem.product.salePrice ? cartItem.product.salePrice : cartItem.product.price) | currency }}</p>
+				<p class = "largeFont">{{ (cartItem.product.salePrice ? cartItem.product.salePrice : cartItem.product.price) | currency }}</p>
 				
-				<p *ngIf = "cartItem.product.salePrice" class = "oldPrice mediumFont">{{ cartItem.product.price | currency }}</p>
+				<p *ngIf = "cartItem.product.salePrice" class = "oldPrice largeFont">{{ cartItem.product.price | currency }}</p>
 			</div>
 		</div>
 	</div>
