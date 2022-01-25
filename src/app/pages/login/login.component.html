@@ -13,7 +13,7 @@
             <br>
             <input class="un" type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
         </div>
-        <div *ngIf="errMsg" class="err" id= "error-message">{{errMsg}}</div>
+        <div *ngIf="errMsg" class="err largeFont" id= "error-message">{{errMsg}}</div>
         <br>
         <div class="btn-container">
             <button class="btn btn-primary" id="login" (click)="loginUser()">Login</button>

@@ -19,9 +19,10 @@ h1{
 
 .err{
     color: red;
+    font-weight: bold;
     display: flex;
     justify-content: center;
-    background-color: black;
+    
 }
 .btn-container
 {
