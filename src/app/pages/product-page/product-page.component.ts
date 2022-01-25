@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartItem } from 'src/app/models/CartItem';
 import { Product } from 'src/app/models/Product';
+import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/services/api/api.service';
 import { DataService } from 'src/app/services/data/data.service';
 
@@ -19,8 +20,10 @@ export class ProductPageComponent implements OnInit {
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
 	inCart: boolean = false;
+
+	userRole: string = "USER";
 	
-	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, public dataService : DataService) {}
+	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, public dataService : DataService, private router: Router) {}
 	
 	onQuantityInput = (event : any) : void => {
 		//todo allow backspacing but when unfocus set to 1 if still blank
@@ -53,6 +56,7 @@ export class ProductPageComponent implements OnInit {
 			}, 3000);
 		});
 	}
+
 	
 	ngOnInit () : void {
 		this.activatedRoute.params.subscribe (paramaters => {
@@ -70,5 +74,16 @@ export class ProductPageComponent implements OnInit {
 				}
 			});
 		});
+		
+		/* ADMIN TEAM ADDITION */
+		console.log(this.dataService);
+		if (this.dataService.user){
+			this.userRole = this.dataService.user.role.role;
+		}
+	}
+	
+	/* ADMIN TEAM ADDITION */
+	editProduct(id: number) {
+		this.router.navigate([`/admin/${this.product.id}`]);
 	}
 }
