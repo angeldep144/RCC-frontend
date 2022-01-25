@@ -6,16 +6,16 @@
 	</div>
 	
 	<div class = "productInfo flexColumn mediumGap">
-		<p class = "extraLargeFont">{{ this.product.name }}</p>
+		<p class = "extraLargeFont">{{ product.name }}</p>
 		
 		<div class = "flex smallGap">
-			<p class = "mediumFont">${{ this.product.salePrice ? this.product.salePrice : this.product.price }}</p>
+			<p class = "mediumFont">{{ (product.salePrice ? product.salePrice : product.price) | currency }}</p>
 			
-			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">${{ this.product.price }}</p>
+			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">{{ product.price | currency }}</p>
 		</div>
 		
 		<div class = "flex">
-			<p class = "productDescription smallFont">{{ this.product.description }}</p>
+			<p class = "productDescription smallFont">{{ product.description }}</p>
 		</div>
 		
 		<ng-template [ngIf] = "product.stock > 0 && dataService.user.username" [ngIfElse] = "outOfStock">

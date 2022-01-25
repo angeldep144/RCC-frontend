@@ -9,9 +9,9 @@
 		<p class = "mediumFont">{{ product.name }}</p>
 		
 		<div class = "flex smallGap">
-			<p class = "mediumFont">${{ product.salePrice ? product.salePrice : product.price }}</p>
+			<p class = "mediumFont">{{ (product.salePrice ? product.salePrice : product.price) | currency }}</p>
 			
-			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">${{ product.price }}</p>
+			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">{{ product.price | currency }}</p>
 		</div>
 		
 		<div class = "flex">
