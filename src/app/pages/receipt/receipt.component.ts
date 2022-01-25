@@ -19,6 +19,8 @@ export class ReceiptComponent implements OnInit {
 	ngOnInit () : void {
 		this.activatedRoute.params.subscribe (paramaters => {
 			this.apiService.getTransaction (parseInt (paramaters ["transactionId"]), (body : any) : void => {
+				body.data.items = JSON.parse (body.data.items);
+				
 				this.transaction = body.data;
 			});
 		});

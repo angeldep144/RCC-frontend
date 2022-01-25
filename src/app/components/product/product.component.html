@@ -1,8 +1,10 @@
 <div routerLink = "/product/{{ product.id }}" id="product#{{product.id}}" class = "product flexColumn mediumGap">
 	<div class = "productImageContainer flex">
-		<img class = "productImage" src = {{product.imageUrl}}>
+		<img class = "productImage" [ngClass] = "{ 'grayedOut': product.stock < 1 }" src = {{product.imageUrl}}>
 		
-		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
+		<img *ngIf = "product.salePrice" [ngClass] = "{ 'grayedOut': product.stock < 1 }" class = "saleRibbon" src = "assets/img/saleRibbon.png">
+		
+		<p *ngIf = "product.stock < 1" class = "outOfStockMessage mediumFont errorMessage">Out of stock!</p>
 	</div>
 	
 	<div class = "productInfo flexColumn smallGap">

@@ -29,6 +29,14 @@
 	position: absolute;
 }
 
+.grayedOut {
+	opacity: .2;
+}
+
+.outOfStockMessage {
+	position: absolute;
+}
+
 .productInfo {
 	width: 100%;
 	padding: 5px;

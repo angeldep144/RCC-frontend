@@ -133,8 +133,13 @@ button {
 	box-sizing: border-box;
 }
 
+.foregroundElement {
+	background: var(--theme-color-3);
+	border: var(--theme-color-3-border);
+}
+
 .errorMessage {
-	color: red;
+	color: #F22727;
 }
 
 .formContainer {
@@ -146,20 +151,14 @@ button {
 	border-radius: 4px;
 }
 
-.formContainer input, .formContainer button, .formContainer select {
-	background: var(--theme-color-3);
-	border: var(--theme-color-3-border);
-}
 
 .oldPrice {
-	color: #D13B3B;
+	color: #AAA;
 	text-decoration: line-through;
 }
 
 .quantityInput {
 	width: 70px;
-	background: var(--theme-color-3);
-	border: var(--theme-color-3-border);
 }
 
 .cartControls {

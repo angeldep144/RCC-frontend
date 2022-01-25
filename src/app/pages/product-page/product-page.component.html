@@ -18,20 +18,24 @@
 		
 		<p *ngIf = "product.stock > 0" class = "mediumFont">In Stock: {{ product.stock }}</p>
 		
-		<p *ngIf = "product.stock < 1" class = "errorMessage mediumFont">Out of stock!</p>
+		<p *ngIf = "product.stock < 1" class = "errorMessage largeFont">Out of stock!</p>
 		
-		<ng-template [ngIf] = "product.stock > 0 && dataService.user.username">
-			<div *ngIf = "!inCart" class = "cartControls flex smallGap">
-				<input [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);" class = "quantityInput mediumFont" type = "number">
+		<div class = "cartControls flexColumn smallGap">
+			<ng-template [ngIf] = "product.stock > 0 && dataService.user.username">
+				<div *ngIf = "!inCart" class = "flex fullWidth smallGap">
+					<input [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);" class = "quantityInput foregroundElement mediumFont" type = "number">
+					
+					<button class = "cartButton mediumFont" (click) = "addToCart (quantityInput);">Add to Cart</button>
+				</div>
 				
-				<button class = "cartButton mediumFont" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
-			</div>
+				<div *ngIf = "inCart" class = "flexColumn fullWidth smallGap">
+					<button class = "cartButton fullWidth mediumFont" routerLink = "/cart">Go to Cart</button>
+					
+					<p *ngIf = "cartMessage mediumFont" id = "cartMessage">Added to Cart</p>
+				</div>
+			</ng-template>
 			
-			<div *ngIf = "inCart" class = "cartControls flexColumn smallGap">
-				<button class = "cartButton mediumFont" type = "button" routerLink = "/cart">Go to Cart</button>
-				
-				<p *ngIf = "cartMessage mediumFont" id = "cartMessage">Added to Cart</p>
-			</div>
-		</ng-template>
+			<button class = "foregroundElement fullWidth mediumFont" routerLink = "/">Continue Shopping</button>
+		</div>
 	</div>
 </div>
