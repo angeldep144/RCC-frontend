@@ -70,7 +70,7 @@ export class AdminPageComponent implements OnInit {
 		formData.append("stock", JSON.stringify(this.newProduct.stock));
 		formData.append("imageUrl", this.newProduct.imageUrl);
     formData.append("file", file);
-
+    formData.append("id", JSON.stringify(this.newProduct.id));
 
     console.log("new product");
     console.log(this.newProduct);
