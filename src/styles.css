@@ -84,13 +84,24 @@ button {
 	align-items: flex-start;
 }
 
-.page {
+.fullWidth {
 	width: 100%;
-	height: 92.5vh;
-	flex-grow: 1;
-	overflow-y: scroll;
-	padding: 20px 10vw;
-	box-sizing: border-box;
+}
+
+.smallGap {
+	gap: 5px;
+}
+
+.mediumGap {
+	gap: 10px;
+}
+
+.largeGap {
+	gap: 15px;
+}
+
+.extraLargeGap {
+	gap: 20px;
 }
 
 .extraSmallFont {
@@ -110,33 +121,45 @@ button {
 }
 
 .extraLargeFont {
-	font-size: 35px;
+	font-size: 33px;
 }
 
-.smallGap {
-	gap: 5px;
+.page {
+	width: 100%;
+	height: 92.5vh;
+	flex-grow: 1;
+	overflow-y: scroll;
+	padding: 20px 10vw;
+	box-sizing: border-box;
 }
 
-.mediumGap {
-	gap: 10px;
+.errorMessage {
+	color: red;
 }
 
-.largeGap {
-	gap: 15px;
+.formContainer {
+	width: 670px;
+	max-width: 90vw;
+	padding: 15px;
+	background: var(--theme-color-2);
+	box-sizing: border-box;
+	border-radius: 4px;
 }
 
-.extraLargeGap {
-	gap: 20px;
+.formContainer input, .formContainer button, .formContainer select {
+	background: var(--theme-color-3);
+	border: var(--theme-color-3-border);
 }
 
 .oldPrice {
+	color: #D13B3B;
 	text-decoration: line-through;
-	color: red;
 }
 
 .quantityInput {
 	width: 70px;
 	background: var(--theme-color-3);
+	border: var(--theme-color-3-border);
 }
 
 .cartControls {
@@ -144,5 +167,5 @@ button {
 }
 
 .cartButton {
-	background-color: mediumseagreen;
+	background-color: mediumseagreen !important;
 }

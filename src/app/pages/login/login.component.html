@@ -1,21 +1,21 @@
-<div class="content">
-    <h3 class="login-title">Login</h3>
-    <form class="form1" ngNativeValidate>
-        
-        <div class="form-item">
-            <label class="label" for ="usernameInput">Username</label>
-            <br>
-            <input class="un" type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
-        </div>
-
-        <div class="form-item">
-            <label class="label" for ="passwordInput">Password</label>
-            <br>
-            <input class="un" type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
-        </div>
-        <div *ngIf="errMsg" class="err largeFont" id= "error-message">{{errMsg}}</div>
-        <br>
-        <div class="btn-container">
-            <button class="btn btn-primary" id="login" (click)="loginUser()">Login</button>
-            <button class="btn btn-primary" id="register" (click)="goToReg()">Register</button>
-        </div>
+<div class = "formContainer flexColumn largeGap">
+	<p class = "extraLargeFont">Login</p>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Username</p>
+		
+		<input [(ngModel)] = "identifierInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
+	</div>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Password</p>
+		
+		<input [(ngModel)] = "passwordInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" type = "password" />
+	</div>
+	
+	<p *ngIf = "errorMessage" class = "mediumFont errorMessage">{{ errorMessage }}</p>
+	
+	<button (click) = "login ();" class = "mediumFont">Login</button>
+	
+	<a routerLink = "/register" class = "mediumFont">Register</a>
+</div>

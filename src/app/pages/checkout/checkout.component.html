@@ -1,59 +1,59 @@
-<p id = "checkout-title" class = "extraLargeFont">Checkout</p>
+<p class = "extraLargeFont">Checkout</p>
 
-<div class = "checkoutContainer flexColumn largeGap">
+<div class = "formContainer flexColumn largeGap">
 	<p class = "largeFont">Shipping Address</p>
 	
-	<div class = "checkoutInputContainer flexColumnLeft largeGap">
-		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+	<div class = "fullWidth flexColumnLeft largeGap">
+		<div class = "fullWidth flexColumnLeft smallGap">
 			<p class = "mediumFont">Email</p>
 			
-			<input class = "checkoutInput mediumFont" type = "email" />
+			<input class = "fullWidth mediumFont" type = "email" />
 		</div>
 		
-		<div class = "checkoutInputContainer flex smallGap">
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flex smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">First Name</p>
 				
-				<input class = "checkoutInput mediumFont" />
+				<input class = "fullWidth mediumFont" />
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">Last Name</p>
 				
-				<input class = "checkoutInput mediumFont" />
+				<input class = "fullWidth mediumFont" />
 			</div>
 		</div>
 		
-		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flexColumnLeft smallGap">
 			<p class = "mediumFont">Address</p>
 			
-			<input class = "checkoutInput mediumFont" placeholder = "1234 Main St" />
+			<input class = "fullWidth mediumFont" placeholder = "1234 Main St" />
 			
-			<input class = "checkoutInput mediumFont" placeholder = "Apartment, studio, or floor" />
+			<input class = "fullWidth mediumFont" placeholder = "Apartment, studio, or floor" />
 		</div>
 		
 		<div class = "flex smallGap">
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">City</p>
 				
-				<input class = "checkoutInput mediumFont" />
+				<input class = "fullWidth mediumFont" />
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">State</p>
 				
 				<!-- todo 1? pixel too tall -->
-				<select class = "checkoutInput mediumFont">
+				<select class = "fullWidth mediumFont">
 					<option class = "mediumFont"></option>
 					
 					<option class = "mediumFont" *ngFor = "let state of states">{{ state.name }}</option>
 				</select>
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">ZIP</p>
 				
-				<input class = "checkoutInput mediumFont">
+				<input class = "fullWidth mediumFont">
 			</div>
 		</div>
 		
@@ -65,118 +65,118 @@
 	</div>
 </div>
 
-<div *ngIf = "!hideBillingAddress" class = "checkoutContainer flexColumn largeGap">
+<div *ngIf = "!hideBillingAddress" class = "formContainer flexColumn largeGap">
 	<div class = "flexColumn largeGap">
 		<p class = "largeFont">Billing Address</p>
 		
-		<div class = "checkoutInputContainer flexColumnLeft largeGap">
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flexColumnLeft largeGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">Email</p>
 				
-				<input class = "checkoutInput mediumFont" type = "email" />
+				<input class = "fullWidth mediumFont" type = "email" />
 			</div>
 			
-			<div class = "checkoutInputContainer flex smallGap">
-				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flex smallGap">
+				<div class = "fullWidth flexColumnLeft smallGap">
 					<p class = "mediumFont">First Name</p>
 					
-					<input class = "checkoutInput mediumFont" />
+					<input class = "fullWidth mediumFont" />
 				</div>
 				
-				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<div class = "fullWidth flexColumnLeft smallGap">
 					<p class = "mediumFont">Last Name</p>
 					
-					<input class = "checkoutInput mediumFont" />
+					<input class = "fullWidth mediumFont" />
 				</div>
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">Address</p>
 				
-				<input class = "checkoutInput mediumFont" placeholder = "1234 Main St" />
+				<input class = "fullWidth mediumFont" placeholder = "1234 Main St" />
 				
-				<input class = "checkoutInput mediumFont" placeholder = "Apartment, studio, or floor" />
+				<input class = "fullWidth mediumFont" placeholder = "Apartment, studio, or floor" />
 			</div>
 			
 			<div class = "flex smallGap">
-				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<div class = "fullWidth flexColumnLeft smallGap">
 					<p class = "mediumFont">City</p>
 					
-					<input class = "checkoutInput mediumFont" />
+					<input class = "fullWidth mediumFont" />
 				</div>
 				
-				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<div class = "fullWidth flexColumnLeft smallGap">
 					<p class = "mediumFont">State</p>
 					
 					<!-- todo 1? pixel too tall -->
-					<select class = "checkoutInput mediumFont">
+					<select class = "fullWidth mediumFont">
 						<option class = "mediumFont"></option>
 						
 						<option class = "mediumFont" *ngFor = "let state of states">{{ state.name }}</option>
 					</select>
 				</div>
 				
-				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<div class = "fullWidth flexColumnLeft smallGap">
 					<p class = "mediumFont">ZIP</p>
 					
-					<input class = "checkoutInput mediumFont">
+					<input class = "fullWidth mediumFont" type = "tel" inputmode = "numeric">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class = "checkoutContainer flexColumn largeGap">
+<div class = "formContainer flexColumn largeGap">
 	<p class = "largeFont">Payment</p>
 	
-	<div class = "checkoutInputContainer flexColumnLeft largeGap">
-		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+	<div class = "fullWidth flexColumnLeft largeGap">
+		<div class = "fullWidth flexColumnLeft smallGap">
 			<p class = "mediumFont">Card Number</p>
 			
-			<input class = "checkoutInput mediumFont" type = "tel" inputmode = "numeric" pattern = "[0-9\s]{13,19}" autocomplete = "cc-number" maxlength = "19" placeholder = "xxxx xxxx xxxx xxxx">
+			<input class = "fullWidth mediumFont" type = "tel" inputmode = "numeric" pattern = "[0-9\s]{13,19}" autocomplete = "cc-number" maxlength = "19" placeholder = "xxxx xxxx xxxx xxxx">
 		</div>
 		
-		<div class = "checkoutInputContainer flex smallGap">
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flex smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">First Name</p>
 				
-				<input class = "checkoutInput mediumFont" />
+				<input class = "fullWidth mediumFont" />
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">Last Name</p>
 				
-				<input class = "checkoutInput mediumFont" />
+				<input class = "fullWidth mediumFont" />
 			</div>
 		</div>
 		
-		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flexColumnLeft smallGap">
 			<p class = "mediumFont">Expiration Date</p>
 			
-			<div class = "checkoutInputContainer flex smallGap">
-				<input class = "checkoutInput mediumFont" placeholder = "MM" />
+			<div class = "fullWidth flex smallGap">
+				<input class = "fullWidth mediumFont" placeholder = "MM" type = "tel" inputmode = "numeric" />
 				
-				<input class = "checkoutInput mediumFont" placeholder = "YY" />
+				<input class = "fullWidth mediumFont" placeholder = "YY" type = "tel" inputmode = "numeric" />
 			</div>
 		</div>
 		
-		<div class = "checkoutInputContainer flex smallGap">
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+		<div class = "fullWidth flex smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">CVV</p>
 				
-				<input class = "checkoutInput mediumFont">
+				<input class = "fullWidth mediumFont" type = "tel" inputmode = "numeric">
 			</div>
 			
-			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<div class = "fullWidth flexColumnLeft smallGap">
 				<p class = "mediumFont">ZIP</p>
 				
-				<input class = "checkoutInput mediumFont">
+				<input class = "fullWidth mediumFont" type = "tel" inputmode = "numeric">
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class = "checkoutContainer largeGap">
+<div class = "formContainer largeGap">
 	<div class = "flex smallGap">
 		<p class = "mediumFont">Total:</p>
 		
@@ -184,6 +184,6 @@
 	</div>
 	
 	<div class = "cartControls">
-		<button (click) = "checkout ();" class = "cartButton mediumFont" type = "button">Checkout</button>
+		<button (click) = "checkout ();" class = "cartButton fullWidth mediumFont" type = "button">Checkout</button>
 	</div>
 </div>

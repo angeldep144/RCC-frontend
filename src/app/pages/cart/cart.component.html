@@ -1,29 +1,29 @@
-<div id = "cartContainer" class = "flexTop largeGap">
+<div class = "flexTop largeGap">
 	<div id = "cartItems" class = "flexColumnTop mediumGap">
 		<app-cart-item *ngFor = "let cartItem of dataService.user.cart" [cartItem] = "cartItem"></app-cart-item>
 	</div>
 	
 	<div id = "cartTotals" class = "flexColumnTop mediumGap">
-		<div class = "flex smallGap">
+		<div class = "fullWidth flex smallGap">
 			<p class = "mediumFont">Subtotal:</p>
 			
 			<p class = "mediumFont">{{ dataService.cartSubtotal | currency }}</p>
 		</div>
 		
-		<div *ngIf = "dataService.cartSales > 0" class = "flex smallGap">
+		<div *ngIf = "dataService.cartSales > 0" class = "fullWidth flex smallGap">
 			<p class = "mediumFont">Sales:</p>
 			
 			<p class = "mediumFont">- {{ dataService.cartSales | currency }}</p>
 		</div>
 		
-		<div class = "flex smallGap">
+		<div class = "fullWidth flex smallGap">
 			<p class = "mediumFont">Total:</p>
 			
 			<p class = "mediumFont">{{ dataService.cartTotal | currency }}</p>
 		</div>
 		
 		<div *ngIf = "dataService.user.cart.length > 0" class = "cartControls">
-			<button class = "cartButton mediumFont" type = "button" routerLink = "/checkout">Checkout</button>
+			<button class = "cartButton fullWidth mediumFont" type = "button" routerLink = "/checkout">Checkout</button>
 		</div>
 	</div>
 </div>
