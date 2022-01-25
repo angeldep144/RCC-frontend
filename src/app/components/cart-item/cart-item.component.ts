@@ -31,6 +31,8 @@ export class CartItemComponent implements OnInit {
 	removeFromCart = () : void => {
 		this.apiService.deleteCartItem (this.cartItem.id, (body : any) : void => {
 			this.dataService.user.cart.splice (this.dataService.user.cart.indexOf (this.cartItem), 1);
+			
+			this.dataService.updateUser (this.dataService.user);
 		});
 	};
 	
