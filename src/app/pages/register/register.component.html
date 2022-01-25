@@ -1,38 +1,39 @@
-
-<div class="content">
-    
-    <h3 class="register-title">Register</h3>
-<form (submit)="registerUser()" class="form1" ngNativeValidate>
-    <div class="err largeFont" id= "error-message"*ngIf="errMessage">{{errMessage}}</div>
-    <div class="form-item">
-        <label class="label" for ="usernameInput">Username</label>
-        <input type="text" id="username" class="un " name="username"  placeholder="" [(ngModel)]="usernameInput" required="required"> 
-    </div>
-    <div class="form-item">
-        <label class="label" for ="passwordInput">Password</label>
-        <input type="password" id="password" class="un " name="password" [(ngModel)]="passwordInput" placeholder="" required="required"> 
-    </div>
-
-    <div class="form-item">
-        <label class="label" for ="firstNameInput">First Name</label>
-        <input type="text" id="firstname" class="un " name="firstName" [(ngModel)]="firstNameInput" placeholder="" required="required"> 
-    </div>
-
-    <div class="form-item">
-        <label class="label" for ="lastNameInput">Last Name</label>
-        <input type="text" id="lastname" class="un " name="lastName" [(ngModel)]="lastNameInput" placeholder="" required="required"> 
-    </div>
-    <div class="form-item">
-        <label class="label" for ="emailInput">Email</label>
-        <input type="text" id="email" class="un " name="email" [(ngModel)]="emailInput" placeholder="" required="required"> 
-    </div>
-    <!-- <p class="field-note">* All fields are required</p> -->
-
-    <div class="form-item">
-        <button class="register" id="register-btn" name="button" >Register</button>
-    </div>    
-    
-    <br>
-</form>  
-
-<script src="./script.js"></script>
+<div class = "formContainer flexColumn largeGap">
+	<p class = "extraLargeFont">Register</p>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">First Name</p>
+		
+		<input [(ngModel)] = "firstNameInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
+	</div>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Last Name</p>
+		
+		<input [(ngModel)] = "lastNameInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
+	</div>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Email</p>
+		
+		<input [(ngModel)] = "emailInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" type = "email" />
+	</div>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Username</p>
+		
+		<input [(ngModel)] = "usernameInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
+	</div>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Password</p>
+		
+		<input [(ngModel)] = "passwordInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" type = "password" />
+	</div>
+	
+	<p *ngIf = "errorMessage" class = "mediumFont errorMessage">{{ errorMessage }}</p>
+	
+	<button (click) = "register ();" class = "mediumFont">Register</button>
+	
+	<a routerLink = "/login" class = "mediumFont">Login</a>
+</div>
