@@ -20,7 +20,7 @@ export class ProductPageComponent implements OnInit {
 	cartMessage: boolean = false;
 	inCart: boolean = false;
 	
-	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, private dataService : DataService) {}
+	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, public dataService : DataService) {}
 	
 	onQuantityInput = (event : any) : void => {
 		//todo allow backspacing but when unfocus set to 1 if still blank

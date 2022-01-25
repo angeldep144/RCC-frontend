@@ -1,105 +1,189 @@
+<p id = "checkout-title" class = "extraLargeFont">Checkout</p>
 
+<div class = "checkoutContainer flexColumn largeGap">
+	<p class = "largeFont">Shipping Address</p>
+	
+	<div class = "checkoutInputContainer flexColumnLeft largeGap">
+		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<p class = "mediumFont">Email</p>
+			
+			<input class = "checkoutInput mediumFont" type = "email" />
+		</div>
+		
+		<div class = "checkoutInputContainer flex smallGap">
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">First Name</p>
+				
+				<input class = "checkoutInput mediumFont" />
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">Last Name</p>
+				
+				<input class = "checkoutInput mediumFont" />
+			</div>
+		</div>
+		
+		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<p class = "mediumFont">Address</p>
+			
+			<input class = "checkoutInput mediumFont" placeholder = "1234 Main St" />
+			
+			<input class = "checkoutInput mediumFont" placeholder = "Apartment, studio, or floor" />
+		</div>
+		
+		<div class = "flex smallGap">
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">City</p>
+				
+				<input class = "checkoutInput mediumFont" />
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">State</p>
+				
+				<!-- todo 1? pixel too tall -->
+				<select class = "checkoutInput mediumFont">
+					<option class = "mediumFont"></option>
+					
+					<option class = "mediumFont" *ngFor = "let state of states">{{ state.name }}</option>
+				</select>
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">ZIP</p>
+				
+				<input class = "checkoutInput mediumFont">
+			</div>
+		</div>
+		
+		<div class = "flexLeft smallGap">
+			<input class = "mediumFont" type = "checkbox" [(ngModel)] = "hideBillingAddress" />
+			
+			<p class = "mediumFont">Use shipping address as billing address</p>
+		</div>
+	</div>
+</div>
 
-<div class="checkout-container">
-    <div id="shipping-form"> 
-        <h2 id="checkout-title"> Checkout</h2>
-        <h5> Enter your Shipping Address</h5>
-        <form class="row g-3 ">
-            <div class="col-12">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="ship-check" (click)="toggleBilling()">
-                <label class="form-check-label" for="gridCheck">
-                    Use shipping address for billing
-                </label>
-                </div>
-            </div>
-            <div class="col-12">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="first-name" class="form-control" id="input-first-name">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Last Name</label>
-                <input type="last-name" class="form-control" id="input-last-name">
-            </div>
-            <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select" name="states" [(ngModel)]="checkout.states">
-                <option value="" selected>Choose...</option>
-                <option>...</option>
-            </select>
-            </div>
-            <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-            </div>
-            
-            <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit order</button>
-            </div>
-        </form>
-    </div>
-    <div id="Billing-form" *ngIf="!this.useShipping"> 
-        <h2 id="checkout-title"> Checkout</h2>
-        <h5> Enter your Shipping Address</h5>
-        <form class="row g-3 ">
-            
-            <div class="col-12">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="first-name" class="form-control" id="input-first-name">
-              </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Last Name</label>
-                <input type="last-name" class="form-control" id="input-last-name">
-              </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Submit order</button>
-            </div>
-          </form>
-        </div>
+<div *ngIf = "!hideBillingAddress" class = "checkoutContainer flexColumn largeGap">
+	<div class = "flexColumn largeGap">
+		<p class = "largeFont">Billing Address</p>
+		
+		<div class = "checkoutInputContainer flexColumnLeft largeGap">
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">Email</p>
+				
+				<input class = "checkoutInput mediumFont" type = "email" />
+			</div>
+			
+			<div class = "checkoutInputContainer flex smallGap">
+				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+					<p class = "mediumFont">First Name</p>
+					
+					<input class = "checkoutInput mediumFont" />
+				</div>
+				
+				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+					<p class = "mediumFont">Last Name</p>
+					
+					<input class = "checkoutInput mediumFont" />
+				</div>
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">Address</p>
+				
+				<input class = "checkoutInput mediumFont" placeholder = "1234 Main St" />
+				
+				<input class = "checkoutInput mediumFont" placeholder = "Apartment, studio, or floor" />
+			</div>
+			
+			<div class = "flex smallGap">
+				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+					<p class = "mediumFont">City</p>
+					
+					<input class = "checkoutInput mediumFont" />
+				</div>
+				
+				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+					<p class = "mediumFont">State</p>
+					
+					<!-- todo 1? pixel too tall -->
+					<select class = "checkoutInput mediumFont">
+						<option class = "mediumFont"></option>
+						
+						<option class = "mediumFont" *ngFor = "let state of states">{{ state.name }}</option>
+					</select>
+				</div>
+				
+				<div class = "checkoutInputContainer flexColumnLeft smallGap">
+					<p class = "mediumFont">ZIP</p>
+					
+					<input class = "checkoutInput mediumFont">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-    
+<div class = "checkoutContainer flexColumn largeGap">
+	<p class = "largeFont">Payment</p>
+	
+	<div class = "checkoutInputContainer flexColumnLeft largeGap">
+		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<p class = "mediumFont">Card Number</p>
+			
+			<input class = "checkoutInput mediumFont" type = "tel" inputmode = "numeric" pattern = "[0-9\s]{13,19}" autocomplete = "cc-number" maxlength = "19" placeholder = "xxxx xxxx xxxx xxxx">
+		</div>
+		
+		<div class = "checkoutInputContainer flex smallGap">
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">First Name</p>
+				
+				<input class = "checkoutInput mediumFont" />
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">Last Name</p>
+				
+				<input class = "checkoutInput mediumFont" />
+			</div>
+		</div>
+		
+		<div class = "checkoutInputContainer flexColumnLeft smallGap">
+			<p class = "mediumFont">Expiration Date</p>
+			
+			<div class = "checkoutInputContainer flex smallGap">
+				<input class = "checkoutInput mediumFont" placeholder = "MM" />
+				
+				<input class = "checkoutInput mediumFont" placeholder = "YY" />
+			</div>
+		</div>
+		
+		<div class = "checkoutInputContainer flex smallGap">
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">CVV</p>
+				
+				<input class = "checkoutInput mediumFont">
+			</div>
+			
+			<div class = "checkoutInputContainer flexColumnLeft smallGap">
+				<p class = "mediumFont">ZIP</p>
+				
+				<input class = "checkoutInput mediumFont">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class = "checkoutContainer largeGap">
+	<div class = "flex smallGap">
+		<p class = "mediumFont">Total:</p>
+		
+		<p class = "mediumFont">{{ dataService.cartTotal | currency }}</p>
+	</div>
+	
+	<div class = "cartControls">
+		<button (click) = "checkout ();" class = "cartButton mediumFont" type = "button">Checkout</button>
+	</div>
 </div>
