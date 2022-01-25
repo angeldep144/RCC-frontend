@@ -97,3 +97,19 @@
 .product {
 	margin: 10px;
 }
+
+#errMessage{
+	background-color: rgb(206, 98, 98);
+	color: whitesmoke;
+	display: flex;
+	justify-content: center;
+	padding: 4px;
+	margin-top: 15px;
+}
+
+#btn-container{
+	padding: 4px;
+	margin: 4px;
+	display: flex;
+	justify-content: center;
+}

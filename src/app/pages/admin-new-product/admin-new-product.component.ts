@@ -16,19 +16,14 @@ export class AdminNewProductComponent implements OnInit {
   imgInput: FileList = <FileList>{};
   apiService: any;
 
+  errMessage: string = '';
+
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) { 
 
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(parameters => {
-      this.id = parameters['id'];
-      this.apiService.getProduct (parseInt (parameters["id"]), (body : any) : void => {
-        console.log(body);
-        this.product = body.data;
-        this.newProduct = body.data;
-      })
-    });
+    
   }
 
   fileInput(event: any){
@@ -39,6 +34,7 @@ export class AdminNewProductComponent implements OnInit {
     var formData: FormData = new FormData();
 
     let file: File = this.imgInput[0];
+
 
 		if(this.newProduct.salePrice){
 		  this.newProduct.salePrice = +this.newProduct.salePrice.toFixed(2);
@@ -57,6 +53,7 @@ export class AdminNewProductComponent implements OnInit {
 		formData.append("name", this.newProduct.name)
 		formData.append("description", this.newProduct.description);
 		formData.append("price", JSON.stringify(this.newProduct.price));
+
 		if(this.newProduct.salePrice){
 			formData.append("salePrice", JSON.stringify(this.newProduct.salePrice));
 		}
@@ -71,7 +68,11 @@ export class AdminNewProductComponent implements OnInit {
     console.log("product");
     console.log(this.product);
 
-    this.apiService.updateProductItem(formData);
+    if((this.newProduct.price < 0) || (this.newProduct.salePrice < 0)) {
+      this.errMessage = "Product price cannot be less than $0.00";
+    } else {
+      this.apiService.updateProductItem(formData);
+    }
   }
 
 }
