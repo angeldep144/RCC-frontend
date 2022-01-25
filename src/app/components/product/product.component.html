@@ -8,7 +8,7 @@
 	<div class = "productInfo flexColumn smallGap">
 		<p class = "mediumFont">{{ product.name }}</p>
 		
-		<div class = "flex smallGap">
+		<div class = "flex mediumGap">
 			<p class = "largeFont">{{ (product.salePrice ? product.salePrice : product.price) | currency }}</p>
 			
 			<p *ngIf = "product.salePrice" class = "oldPrice largeFont">{{ product.price | currency }}</p>
