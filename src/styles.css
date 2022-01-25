@@ -84,6 +84,13 @@ button {
 	align-items: flex-start;
 }
 
+.flexColumnRight {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
 .fullWidth {
 	width: 100%;
 }
@@ -150,7 +157,6 @@ button {
 	box-sizing: border-box;
 	border-radius: 4px;
 }
-
 
 .oldPrice {
 	color: #AAA;
