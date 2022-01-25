@@ -22,7 +22,7 @@
 			<p class = "mediumFont">{{ dataService.cartTotal | currency }}</p>
 		</div>
 		
-		<div *ngIf = "dataService.user.cart.length > 0" class = "cartControls">
+		<div *ngIf = "dataService.user.cart.length > 0" class = "cartControls fullWidth">
 			<button class = "cartButton fullWidth mediumFont" type = "button" routerLink = "/checkout">Checkout</button>
 		</div>
 	</div>
