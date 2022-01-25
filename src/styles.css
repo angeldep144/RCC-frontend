@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background: #960000;
+	background: var(--theme-color-1);
 }
 
 p, pre, a, label {
@@ -18,11 +18,12 @@ p, pre, a, label {
 	word-wrap: break-word;
 	text-align: center;
 	text-decoration: none;
-	color: var(--theme-foreground-color);
+	color: var(--theme-color-4);
 }
 
 a {
 	cursor: pointer;
+	outline: none;
 }
 
 button, input, textarea {
@@ -30,8 +31,8 @@ button, input, textarea {
 	border: none;
 	padding: 10px;
 	box-sizing: border-box;
-	background: var(--theme-background-color);
-	color: var(--theme-foreground-color);
+	background: var(--theme-color-2);
+	color: var(--theme-color-4);
 }
 
 button {
@@ -44,9 +45,21 @@ button {
 	align-items: center;
 }
 
+.flexTop {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 .flexLeft {
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
+}
+
+.flexRight {
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -62,6 +75,13 @@ button {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+.flexColumnLeft {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .page {
@@ -107,4 +127,22 @@ button {
 
 .extraLargeGap {
 	gap: 20px;
+}
+
+.oldPrice {
+	text-decoration: line-through;
+	color: #AAA;
+}
+
+.quantityInput {
+	width: 70px;
+	background: var(--theme-color-3);
+}
+
+.cartControls {
+	margin-top: 10px;
+}
+
+.cartButton {
+	background-color: mediumseagreen;
 }
