@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   
   {
-    path: "receipt",
+    path: "receipt/:transactionId",
     component: ReceiptComponent
   },
   

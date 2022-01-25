@@ -1,28 +1,26 @@
-.shipping-container{
-    background-color: #F26925;
-    width: 550px;
-    height: 620px;
-    margin: 7em auto 1em;
-    border-radius: 0px;
-    box-shadow: 0px 11px 11px rgba(0, 0, 0, 0.14);
-    padding: 2rem;
+.checkoutContainer {
+	width: 670px;
+	max-width: 90vw;
+	padding: 15px;
+	background: var(--theme-color-2);
+	box-sizing: border-box;
+	border-radius: 4px;
 }
 
-.billing-container{
-    background-color: #F26925;
-    width: 550px;
-    height: 500px;
-    margin: 1em auto;
-    border-radius: 0px;
-    box-shadow: 0px 11px 11px rgba(0, 0, 0, 0.14);
-    padding: 2rem;
+.checkoutInputContainer {
+	width: 100%;
 }
-.card-container{
-    background-color: #F26925;
-    width: 550px;
-    height: 250px;
-    margin: 1em auto;
-    border-radius: 0px;
-    box-shadow: 0px 11px 11px rgba(0, 0, 0, 0.14);
-    padding: 2rem;
+
+.checkoutInput {
+	width: 100%;
+	background: var(--theme-color-3);
+}
+
+#cartTotals > div {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.cartButton {
+	width: 100%;
 }

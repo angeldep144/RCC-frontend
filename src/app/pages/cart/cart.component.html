@@ -5,25 +5,25 @@
 	
 	<div id = "cartTotals" class = "flexColumnTop mediumGap">
 		<div class = "flex smallGap">
-			<p class = "smallFont">Subtotal:</p>
+			<p class = "mediumFont">Subtotal:</p>
 			
-			<p class = "smallFont">{{ subtotal | currency }}</p>
+			<p class = "mediumFont">{{ dataService.cartSubtotal | currency }}</p>
 		</div>
 		
-		<div *ngIf = "sales > 0" class = "flex smallGap">
-			<p class = "smallFont">Sales:</p>
+		<div *ngIf = "dataService.cartSales > 0" class = "flex smallGap">
+			<p class = "mediumFont">Sales:</p>
 			
-			<p class = "smallFont">- {{ sales | currency }}</p>
+			<p class = "mediumFont">- {{ dataService.cartSales | currency }}</p>
 		</div>
 		
 		<div class = "flex smallGap">
-			<p class = "smallFont">Total:</p>
+			<p class = "mediumFont">Total:</p>
 			
-			<p class = "smallFont">{{ total | currency }}</p>
+			<p class = "mediumFont">{{ dataService.cartTotal | currency }}</p>
 		</div>
 		
-		<div class = "cartControls flexRight">
-			<button class = "cartButton smallFont" type = "button" routerLink = "/checkout">Checkout</button>
+		<div *ngIf = "dataService.user.cart.length > 0" class = "cartControls">
+			<button class = "cartButton mediumFont" type = "button" routerLink = "/checkout">Checkout</button>
 		</div>
 	</div>
 </div>

@@ -5,7 +5,7 @@
 		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
 	</div>
 	
-	<div class = "productInfo flexColumn smallGap">
+	<div class = "productInfo flexColumn mediumGap">
 		<p class = "extraLargeFont">{{ this.product.name }}</p>
 		
 		<div class = "flex smallGap">
@@ -18,16 +18,22 @@
 			<p class = "productDescription smallFont">{{ this.product.description }}</p>
 		</div>
 		
-		<div *ngIf = "!inCart" class = "cartControls flex smallGap">
-			<input type = "number" class = "quantityInput smallFont" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
+		<ng-template [ngIf] = "product.stock > 0 && dataService.user.username" [ngIfElse] = "outOfStock">
+			<div *ngIf = "!inCart" class = "cartControls flex smallGap">
+				<input [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);" class = "quantityInput mediumFont" type = "number">
+				
+				<button class = "cartButton mediumFont" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
+			</div>
 			
-			<button class = "cartButton smallFont" type = "button" (click) = "addToCart (quantityInput);">Add to Cart</button>
-		</div>
+			<div *ngIf = "inCart" class = "cartControls flexColumn smallGap">
+				<button class = "cartButton mediumFont" type = "button" routerLink = "/cart">Go to Cart</button>
+				
+				<p *ngIf = "cartMessage mediumFont" id = "cartMessage">Added to Cart</p>
+			</div>
+		</ng-template>
 		
-		<div *ngIf = "inCart" class = "cartControls flexColumn smallGap">
-			<button class = "cartButton smallFont" type = "button" routerLink = "/cart">Go to Cart</button>
-			
-			<p *ngIf = "cartMessage smallFont" id = "cartMessage">Added to Cart</p>
-		</div>
+		<ng-template #outOfStock>
+			<p class = "mediumFont" style = "color: red;">Out of stock!</p>
+		</ng-template>
 	</div>
 </div>

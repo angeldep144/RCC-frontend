@@ -126,13 +126,23 @@ export class ApiService {
 		this.handleResponse (this.get ("cartitem"), callback, errorCallback);
 	};
 	
-	updateCartItem = (cartItemId : number, quantity : number, callback? : Function, errorCallback? : Function) : void => {
-		this.handleResponse (this.put ("cartitem/" + cartItemId, {
+	updateCartItem = (id : number, quantity : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.put ("cartitem/" + id, {
 			quantity: quantity
 		}), callback, errorCallback);
 	};
 	
-	deleteCartItem = (cartItemId : number, callback? : Function, errorCallback? : Function) : void => {
-		this.handleResponse (this.delete ("cartitem/" + cartItemId), callback, errorCallback);
+	deleteCartItem = (id : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.delete ("cartitem/" + id), callback, errorCallback);
+	};
+	
+	//transaction
+	
+	createTransaction = (callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.post ("transaction", {}), callback, errorCallback);
+	};
+	
+	getTransaction = (id : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.get ("transaction/" + id), callback, errorCallback);
 	};
 }
