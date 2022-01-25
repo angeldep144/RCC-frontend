@@ -10,6 +10,8 @@
 			<p class = "largeFont">{{ cartItem.product.name }}</p>
 			
 			<p class = "largeFont">Quantity: {{ cartItem.quantity }}</p>
+			
+			<p class = "largeFont">Total: {{ (cartItem.product.salePrice || cartItem.product.price) * cartItem.quantity | currency }}</p>
 		</div>
 	</div>
 </div>
