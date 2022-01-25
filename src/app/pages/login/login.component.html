@@ -4,18 +4,18 @@
 	<div class = "flexColumnLeft mediumGap">
 		<p class = "mediumFont">Username</p>
 		
-		<input [(ngModel)] = "identifierInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
+		<input id = "username" [(ngModel)] = "identifierInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" />
 	</div>
 	
 	<div class = "flexColumnLeft mediumGap">
 		<p class = "mediumFont">Password</p>
 		
-		<input [(ngModel)] = "passwordInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" type = "password" />
+		<input id = "password" [(ngModel)] = "passwordInput" (keydown) = "onKeyDown ($event);" class = "mediumFont" type = "password" />
 	</div>
 	
-	<p *ngIf = "errorMessage" class = "mediumFont errorMessage">{{ errorMessage }}</p>
+	<p *ngIf = "errorMessage" class = "mediumFont errorMessage" id = "errorMessage">{{ errorMessage }}</p>
 	
-	<button (click) = "login ();" class = "mediumFont">Login</button>
+	<button (click) = "login ();" class = "mediumFont" id = "login-btn">Login</button>
 	
-	<a routerLink = "/register" class = "mediumFont">Register</a>
+	<a routerLink = "/register" class = "mediumFont" id = "register-btn">Register</a>
 </div>
