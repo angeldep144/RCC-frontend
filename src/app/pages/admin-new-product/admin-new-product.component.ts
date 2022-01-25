@@ -71,7 +71,7 @@ export class AdminNewProductComponent implements OnInit {
     if((this.newProduct.price < 0) || (this.newProduct.salePrice < 0)) {
       this.errMessage = "Product price cannot be less than $0.00";
     } else {
-      this.apiService.updateProductItem(formData);
+      this.apiService.createNewProduct(formData);
     }
   }
 
