@@ -1,7 +1,7 @@
 <div id = "search" class = "flex smallGap">
 	<input [(ngModel)] = "searchQuery" (keydown) = "onKeyDown ($event);" id = "searchInput" class = "mediumFont" placeholder = "Search..." />
 	
-	<button (click) = "getProducts ();" id = "searchButton" class = "mediumFont">Search</button>
+	<button (click) = "search ();" id = "searchButton" class = "mediumFont">Search</button>
 </div>
 
 <div id = "products" class = "flex mediumGap">

@@ -22,10 +22,18 @@ export class MainComponent implements OnInit {
 	
 	constructor (public dataService : DataService, private apiService : ApiService) {}
 	
-	onKeyDown = (event : KeyboardEvent) => {
+	onKeyDown = (event : KeyboardEvent) : void => {
 		if (event.key === "Enter") {
-			this.getProducts ();
+			this.search ();
 		}
+	};
+	
+	search = () : void => {
+		this.currentPage = 0;
+		
+		this.dataService.products = [];
+		
+		this.getProducts ();
 	};
 	
 	getProducts = () : void => {
