@@ -25,7 +25,8 @@ export class DataService {
 	
 	updateUser = (user : User) : void => {
 		this.user = user;
-		this.userRole = user.role.role;
+		
+		this.userRole = user?.role?.role;
 		
 		localStorage ["user"] = JSON.stringify (user);
 	};
