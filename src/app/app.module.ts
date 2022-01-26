@@ -11,6 +11,12 @@ import { ReceiptComponent } from './pages/receipt/receipt.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminNewProductComponent } from './pages/admin-new-product/admin-new-product.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +24,22 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     LoginComponent,
     MainComponent,
     CartComponent,
+    RegisterComponent,
     CheckoutComponent,
     ReceiptComponent,
     HeaderComponent,
     ProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    RegisterComponent,
+    CartItemComponent,
+    AdminPageComponent,
+    AdminNewProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

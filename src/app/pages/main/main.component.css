@@ -1,7 +1,23 @@
+#search {
+	width: 670px;
+}
+
+#searchInput {
+	flex-grow: 1;
+	background: var(--theme-color-2);
+}
+
+#searchButton {
+	height: 100%;
+	background: var(--theme-color-2);
+}
+
 #products {
-	padding: 20px;
-	gap: 10px;
 	flex-wrap: wrap;
-	justify-content: flex-start;
-	margin: 0 10vw;
+}
+
+#new-product {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
 }

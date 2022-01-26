@@ -1,4 +1,6 @@
 import { Product } from 'src/app/models/Product';
+import { CartItem } from './CartItem';
+import { Role } from './Role';
 
 export interface User {
 	id : number;
@@ -6,5 +8,8 @@ export interface User {
 	lastName : string;
 	username : string;
 	password : string;
-	cart : Product [];
+	email: string;
+	role: Role;
+	//todo change to object that maps productId to quantity
+	cart : CartItem [];
 };
