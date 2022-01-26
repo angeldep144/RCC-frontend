@@ -14,6 +14,8 @@ export class DataService {
 	public cartSubtotal : number = 0;
 	public cartSales : number = 0;
 	public cartTotal : number = 0;
+
+	public userRole : string = "USER";
 	
 	constructor () {
 		if (localStorage ["user"] !== undefined) {
@@ -23,6 +25,7 @@ export class DataService {
 	
 	updateUser = (user : User) : void => {
 		this.user = user;
+		this.userRole = user.role.role;
 		
 		localStorage ["user"] = JSON.stringify (user);
 	};

@@ -38,6 +38,7 @@
 	padding: 5px 5px 5px 5px;
 	flex-grow: 1;
 	box-sizing: border-box;
+	background: var(--theme-color-2);
 }
 
 .oldPrice {
@@ -80,7 +81,8 @@
 /* ------------ADMIN TEAM ADDITIONS ------------ */
 
 .edit{
-    background-color: var(--theme-background-color);
+	background: var(--theme-color-2);
+	color: var(--theme-color-4);
 }
 
 #FlexBox {
@@ -99,6 +101,10 @@
 	padding: 5px;
 	display: flex;
 	justify-content: center;
+}
+
+.product form label {
+	padding-bottom: 5px;
 }
 
 #errMessage{

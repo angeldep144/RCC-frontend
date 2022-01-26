@@ -18,7 +18,7 @@
 		
 		<p *ngIf = "product.stock > 0" class = "mediumFont">In Stock: {{ product.stock }}</p>
 		
-		<p *ngIf = "product.stock < 1" class = "errorMessage largeFont">Out of stock!</p>
+		<p *ngIf = "product.stock == 0" class = "errorMessage largeFont">Out of stock!</p>
 		
 		<div class = "cartControls flexColumn smallGap">
 			<ng-template [ngIf] = "product.stock > 0 && dataService.user.username">

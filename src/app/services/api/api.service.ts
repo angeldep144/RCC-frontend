@@ -112,7 +112,10 @@ export class ApiService {
 	//Admin team addition
 	createNewProduct(formData:FormData){
 		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			console.log(responseBody);
+			if(responseBody.data){
+				console.log(responseBody);
+				this.router.navigate([`product/${responseBody.data.id}`]);
+			}
 		});
 	}
 	
