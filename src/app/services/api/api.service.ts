@@ -113,6 +113,7 @@ export class ApiService {
 	createNewProduct(formData:FormData){
 		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
 			if(responseBody.data){
+				console.log(responseBody);
 				this.router.navigate([`product/${responseBody.data.id}`]);
 			}
 		});

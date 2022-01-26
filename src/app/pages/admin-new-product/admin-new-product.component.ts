@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
+import { ApiService } from 'src/app/services/api/api.service';
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
@@ -14,11 +15,10 @@ export class AdminNewProductComponent implements OnInit {
   product: Product = <Product>{};
   id: number = 0;
   imgInput: FileList = <FileList>{};
-  apiService: any;
 
   errMessage: string = '';
 
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) { 
+  constructor(private apiService: ApiService, private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) { 
 
   }
 
@@ -57,7 +57,10 @@ export class AdminNewProductComponent implements OnInit {
 		if(this.newProduct.salePrice){
 			formData.append("salePrice", JSON.stringify(this.newProduct.salePrice));
 		}
-		formData.append("stock", JSON.stringify(this.newProduct.stock));
+
+    if(this.newProduct.stock){
+		  formData.append("stock", JSON.stringify(this.newProduct.stock));
+    }
 		formData.append("imageUrl", this.newProduct.imageUrl);
     formData.append("file", file);
 
@@ -67,9 +70,13 @@ export class AdminNewProductComponent implements OnInit {
 
     console.log("product");
     console.log(this.product);
+    if(this.newProduct.price < this.newProduct.salePrice){
+      console.log("price error hit.")
+      this.errMessage = "Sale price cannot be higher than price.";
+    }
 
-    if((this.newProduct.price < 0) || (this.newProduct.salePrice < 0)) {
-      this.errMessage = "Product price cannot be less than $0.00";
+    if((this.newProduct.price < 0) || (this.newProduct.salePrice < 0) || (this.newProduct.stock < 0)) {
+      this.errMessage = "Values cannot be less than 0.";
     } else {
       this.apiService.createNewProduct(formData);
     }

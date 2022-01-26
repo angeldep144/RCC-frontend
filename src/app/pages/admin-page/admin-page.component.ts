@@ -14,7 +14,8 @@ export class AdminPageComponent implements OnInit {
 
   product: Product = <Product>{};
   id: number = 0;
-  
+  errMessage: string = '';
+
   imageUrl: string = '';
   newProduct: Product = <Product>{};
   imgInput: FileList = <FileList>{};
@@ -52,7 +53,14 @@ export class AdminPageComponent implements OnInit {
 		  console.log(this.newProduct.salePrice);
 		}
 		  
-		
+		if(this.newProduct.price < this.newProduct.salePrice){
+      console.log("price error hit.")
+      this.errMessage = "Sale price cannot be higher than price.";
+    }
+
+    if((this.newProduct.price < 0) || (this.newProduct.salePrice < 0) || (this.newProduct.stock < 0)) {
+      this.errMessage = "Values cannot be less than 0.";
+    }
 		
 		if(this.newProduct.price){
 			this.newProduct.price = +this.newProduct.price.toFixed(2);
@@ -67,8 +75,12 @@ export class AdminPageComponent implements OnInit {
 		if(this.newProduct.salePrice){
 			formData.append("salePrice", JSON.stringify(this.newProduct.salePrice));
 		}
-		formData.append("stock", JSON.stringify(this.newProduct.stock));
-		formData.append("imageUrl", this.newProduct.imageUrl);
+
+    if(this.newProduct.stock){
+		  formData.append("stock", JSON.stringify(this.newProduct.stock));
+    }
+    
+    formData.append("imageUrl", this.newProduct.imageUrl);
     formData.append("file", file);
     formData.append("id", JSON.stringify(this.newProduct.id));
 
