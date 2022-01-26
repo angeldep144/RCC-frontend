@@ -35,7 +35,7 @@
 				</div>
 			</ng-template>
 			
-			<button class = "foregroundElement fullWidth mediumFont" routerLink = "/">Continue Shopping</button>
+			<button class = "foregroundElement fullWidth mediumFont" routerLink = "/" id = "ContShopBtn">Continue Shopping</button>
 			
 			<button *ngIf = "this.userRole == 'ADMIN'" id ="edit-btn" type="button" (click)="editProduct (this.product.id)">Edit Product</button>
 		</div>
