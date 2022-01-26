@@ -14,4 +14,4 @@
 <a>
 
 </a>
-<button *ngIf="this.dataService.user.role.role == 'ADMIN'" routerLink="admin-new-product" id="new-product">Add New Product</button>
+<button *ngIf="this.dataService.userRole == 'ADMIN'" routerLink="admin-new-product" id="new-product">Add New Product</button>
