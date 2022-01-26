@@ -1,7 +1,7 @@
 .product {
 	width: 250px;
 	height: 275px;
-	background: var(--theme-background-color);
+	background: var(--theme-color-2);
 	box-sizing: border-box;
 	border-radius: 4px;
 	cursor: pointer;
@@ -29,6 +29,14 @@
 	position: absolute;
 }
 
+.grayedOut {
+	opacity: .2;
+}
+
+.outOfStockMessage {
+	position: absolute;
+}
+
 .productInfo {
 	width: 100%;
 	padding: 5px;
@@ -43,9 +51,4 @@
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow-wrap: anywhere;
-}
-
-.oldPrice {
-	text-decoration: line-through;
-	color: red;
 }

@@ -1,43 +1,44 @@
-<div class="product">
-    <div class = "productImageContainer">
+<div class = "product flex">
+	<div class = "productImageContainer flex">
 		<img class = "productImage" src = {{product.imageUrl}}>
 		
 		<img *ngIf = "product.salePrice" class = "saleRibbon" src = "assets/img/saleRibbon.png">
 	</div>
 	
-	<div class = "productInfo flexColumn smallGap">
-		<p class = "extraLargeFont">{{ this.product.name }}</p>
+	<div class = "productInfo flexColumn mediumGap">
+		<p class = "extraLargeFont">{{ product.name }}</p>
 		
-		<div class = "flex smallGap">
-			<p class = "mediumFont">${{ this.product.salePrice ? this.product.salePrice : this.product.price }}</p>
+		<div class = "flex mediumGap">
+			<p class = "largeFont">{{ (product.salePrice ? product.salePrice : product.price) | currency }}</p>
 			
-			<p *ngIf = "product.salePrice" class = "oldPrice mediumFont">${{ this.product.price }}</p>
+			<p *ngIf = "product.salePrice" class = "oldPrice largeFont">{{ product.price | currency }}</p>
 		</div>
 		
-		<div class = "flex">
-			<p class = "productDescription smallFont">{{ this.product.description }}</p>
-		</div>
+		<p class = "productDescription mediumFont">{{ product.description }}</p>
 		
-		<div class= "cart-container">
-            <div *ngIf = "inCart; then trueBlock else falseBlock"></div>
-			
-			<ng-template #trueBlock>
-				<button id = "goToCartBtn" type = "button" routerLink = "/cart">Go to Cart</button>
+		<p *ngIf = "product.stock > 0" class = "mediumFont">In Stock: {{ product.stock }}</p>
+		
+		<p *ngIf = "product.stock < 1" class = "errorMessage largeFont">Out of stock!</p>
+		
+		<div class = "cartControls flexColumn smallGap">
+			<ng-template [ngIf] = "product.stock > 0 && dataService.user.username">
+				<div *ngIf = "!inCart" class = "flex fullWidth smallGap">
+					<input [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);" class = "quantityInput foregroundElement mediumFont" type = "number">
+					
+					<button class = "cartButton mediumFont" (click) = "addToCart (quantityInput);">Add to Cart</button>
+				</div>
 				
-				<div *ngIf = "cartMessage" id = "cartMessage">Added to cart</div>
+				<div *ngIf = "inCart" class = "flexColumn fullWidth smallGap">
+					<button class = "cartButton fullWidth mediumFont" routerLink = "/cart">Go to Cart</button>
+					
+					<p *ngIf = "cartMessage mediumFont" id = "cartMessage">Added to Cart</p>
+				</div>
 			</ng-template>
 			
-			<ng-template #falseBlock>
-				<!-- todo max might need to be less than stock -->
-				<input type = "number" id = "quantity" name = "quantityInput" min = "1" max = "{{ this.product.stock }}" [(ngModel)] = "quantityInput" (input) = "onQuantityInput ($event);">
-				<button id = "addToCartBtn" type = "button" (click) = "addToCart (quantityInput);">Add to cart</button>
-
-			</ng-template>
-							<button *ngIf = "this.userRole == 'ADMIN'" id ="edit-btn" type="button" (click)="editProduct (this.product.id)">Edit Product</button>
-
-
-
-        </div>
+			<button class = "foregroundElement fullWidth mediumFont" routerLink = "/">Continue Shopping</button>
+			
+			<button *ngIf = "this.userRole == 'ADMIN'" id ="edit-btn" type="button" (click)="editProduct (this.product.id)">Edit Product</button>
+		</div>
 	</div>
 </div>
 

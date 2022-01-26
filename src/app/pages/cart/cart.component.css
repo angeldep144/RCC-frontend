@@ -1,3 +1,15 @@
-#products{
-    margin-top: 15px;
+#cartItems {
+	width: 700px;
+	height: 100%;
+}
+
+#cartTotals {
+	width: 300px;
+	padding: 15px;
+	background: var(--theme-color-2);
+	border-radius: 4px;
+}
+
+#cartTotals > div {
+	justify-content: space-between;
 }

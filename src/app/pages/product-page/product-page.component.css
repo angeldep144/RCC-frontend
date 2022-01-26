@@ -1,22 +1,22 @@
 .product {
-	background: var(--theme-background-color);
+	width: 925px;
+	background: var(--theme-color-2);
 	box-sizing: border-box;
 	border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 0;
+	padding: 15px;
 }
 
 .productImageContainer {
-	padding: 10px;
+	width: 100%;
+	height: 320px;
 	position: relative;
+	background: rgba(0, 0, 0, .2);
 }
 
 .productImage {
+	height: 100%;
+	max-width: 100%;
 	object-fit: contain;
-	width: 100%;
-	height: auto;
-	border-radius: 4px;
 }
 
 .saleRibbon {
@@ -33,39 +33,6 @@
 	box-sizing: border-box;
 }
 
-.oldPrice {
-	text-decoration: line-through;
-	color: red;
-}
-
-#addToCartBtn{
-	margin-top: 15px;
-	background-color: mediumseagreen;
-	border: 1px solid black;
-	border-radius: 3px;
-}
-
-#goToCartBtn{
-	margin-top: 15px;
-	background-color: mediumseagreen;
-	border: 1px solid black;
-	border-radius: 3px;
-}
-
-#quantity{
-    margin-right: 10px;
-	width: 70px;
-}
-
-#cartMessage{
-	margin-top: 5px;
-	color: red;
-}
-
-.extraLargeFont{
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-#cartMessage{
-	text-align: center;
+#cartMessage {
+	margin: 10px 0;
 }

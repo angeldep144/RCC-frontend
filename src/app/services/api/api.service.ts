@@ -103,6 +103,21 @@ export class ApiService {
 		this.handleResponse (this.get ("product/" + id), callback, errorCallback);
 	};
 	
+	updateProductItem(formData:FormData){
+		this.httpClient.patch<any>("http://localhost:81/product", formData).subscribe(responseBody => {
+			console.log(responseBody);
+		});
+	}
+	
+	//Admin team addition
+	createNewProduct(formData:FormData){
+		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
+			if(responseBody.data){
+				this.router.navigate([`product/${responseBody.data.id}`]);
+			}
+		});
+	}
+	
 	//user
 	
 	createUser = (user: User, callback? : Function, errorCallback? : Function) : void => {
@@ -123,18 +138,28 @@ export class ApiService {
 			quantity: quantity
 		}), callback, errorCallback);
 	};
-
-	updateProductItem(formData:FormData){
 	
-		this.httpClient.patch<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			console.log(responseBody);
-		});
-	}
-
-	//Admin team addition
-	createNewProduct(formData:FormData){
-		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			console.log(responseBody);
-		});
-	}
+	getCartItems = (callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.get ("cartitem"), callback, errorCallback);
+	};
+	
+	updateCartItem = (id : number, quantity : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.put ("cartitem/" + id, {
+			quantity: quantity
+		}), callback, errorCallback);
+	};
+	
+	deleteCartItem = (id : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.delete ("cartitem/" + id), callback, errorCallback);
+	};
+	
+	//transaction
+	
+	createTransaction = (callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.post ("transaction", {}), callback, errorCallback);
+	};
+	
+	getTransaction = (id : number, callback? : Function, errorCallback? : Function) : void => {
+		this.handleResponse (this.get ("transaction/" + id), callback, errorCallback);
+	};
 }

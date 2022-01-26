@@ -1,22 +1,21 @@
-<div class="content">
-	<div class="form-item">
-		<label for ="usernameInput">Username</label>
-		<br>
-		<input type="text" name="usernameInput" id="username" [(ngModel)]="identifier">
+<div class = "formContainer flexColumn largeGap">
+	<p class = "extraLargeFont">Login</p>
+	
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Username</p>
+		
+		<input id = "username" [(ngModel)] = "identifierInput" (keydown) = "onKeyDown ($event);" class = "foregroundElement mediumFont" />
 	</div>
 	
-	<div class="form-item">
-		<label for ="passwordInput">Password</label>
-		<br>
-		<input type="password" name="passwordInput" id = "password" [(ngModel)]="passwordInput">
+	<div class = "flexColumnLeft mediumGap">
+		<p class = "mediumFont">Password</p>
+		
+		<input id = "password" [(ngModel)] = "passwordInput" (keydown) = "onKeyDown ($event);" class = "foregroundElement  mediumFont" type = "password" />
 	</div>
 	
-	<div *ngIf="errMsg" class="err">{{errMsg}}</div>
+	<p *ngIf = "errorMessage" class = "mediumFont errorMessage" id = "errorMessage">{{ errorMessage }}</p>
 	
-	<br>
+	<button (click) = "login ();" class = "foregroundElement mediumFont" id = "login-btn">Login</button>
 	
-	<div class="form-item-btn">
-		<button class="btn btn-primary" id= "login-btn"(click)="loginUser()">Login</button>
-		<button class="btn btn-primary" id="register" (click)="goToReg()">Register</button>
-	</div>
+	<a routerLink = "/register" class = "mediumFont" id = "register-btn">Register</a>
 </div>

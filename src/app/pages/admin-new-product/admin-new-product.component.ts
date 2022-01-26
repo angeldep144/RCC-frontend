@@ -30,7 +30,7 @@ export class AdminNewProductComponent implements OnInit {
     this.imgInput = event.target.files;
   }
 
-  updateProduct(){
+  createProduct(){
     var formData: FormData = new FormData();
 
     let file: File = this.imgInput[0];

@@ -1,49 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
-import { ApiService } from 'src/app/services/api/api.service';
+import { ApiService } from 'src/app/services/api/api.service'
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+	selector: 'app-register',
+	templateUrl: './register.component.html',
+	styleUrls: ['./register.component.css'],
+	host: {
+		class: "page flexColumnTop extraLargeGap"
+	}
 })
 export class RegisterComponent implements OnInit {
-  errMessage: string = "";
-  usernameInput: string = "";
-  passwordInput: string = "";
-  firstNameInput: string = "";
-  lastNameInput: string = "";
-  emailInput: string = "";
-  //apiServ: any;
-  //router: any;
-  
-  user:User=<User>{}
-
-  constructor(private apiServ:ApiService,private router:Router) { }
-
-  ngOnInit(): void {}
-
-  registerUser(){
-    this.user.username = this.usernameInput;
-    this.user.password = this.passwordInput;
-    this.user.firstName = this.firstNameInput;
-    this.user.lastName = this.lastNameInput;
-    this.user.email = this.emailInput;
-
-    console.log(this.user.password)
-    if(this.user != null) {
-      this.apiServ.createUser(this.user,undefined,(body:any)=>{
-        console.log(body.error);
-        this.errMessage = "wrong username or password";
-        
-        if(body.success==false)
-        {
-          this.errMessage = body.message;
-        }
-        
-        if(body.success){this.router.navigate(['login']);}
-      })
-    }
-  }
+	public firstNameInput : string = "";
+	public lastNameInput : string = "";
+	public emailInput : string = "";
+	public usernameInput : string = "";
+	public passwordInput : string = "";
+	
+	public errorMessage : string = "";
+	
+	constructor (private apiService : ApiService) { }
+	
+	onKeyDown = (event : KeyboardEvent) : void => {
+		if (event.key === "Enter") {
+			this.register ();
+		}
+	};
+	
+	register = () : void => {
+		this.apiService.createUser (<User> {
+			firstName: this.firstNameInput,
+			lastName: this.lastNameInput,
+			email: this.emailInput,
+			username: this.usernameInput,
+			password: this.passwordInput
+		}, undefined, (body : any) : void => {
+			this.errorMessage = body.message;
+		});
+	};
+	
+	ngOnInit () : void {}
 }

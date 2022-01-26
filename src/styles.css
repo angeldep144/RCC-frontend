@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background: #960000;
+	background: var(--theme-color-1);
 }
 
 p, pre, a, label {
@@ -18,20 +18,21 @@ p, pre, a, label {
 	word-wrap: break-word;
 	text-align: center;
 	text-decoration: none;
-	color: var(--theme-foreground-color);
+	color: var(--theme-color-4);
 }
 
 a {
 	cursor: pointer;
+	outline: none;
 }
 
-button, input, textarea {
+button, input, textarea, select {
 	outline: none;
 	border: none;
 	padding: 10px;
 	box-sizing: border-box;
-	background: var(--theme-background-color);
-	color: var(--theme-foreground-color);
+	background: var(--theme-color-2);
+	color: var(--theme-color-4);
 }
 
 button {
@@ -44,9 +45,21 @@ button {
 	align-items: center;
 }
 
+.flexTop {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 .flexLeft {
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
+}
+
+.flexRight {
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -64,13 +77,38 @@ button {
 	align-items: center;
 }
 
-.page {
+.flexColumnLeft {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.flexColumnRight {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.fullWidth {
 	width: 100%;
-	height: 92.5vh;
-	flex-grow: 1;
-	overflow-y: scroll;
-	padding: 20px 10vw;
-	box-sizing: border-box;
+}
+
+.smallGap {
+	gap: 5px;
+}
+
+.mediumGap {
+	gap: 10px;
+}
+
+.largeGap {
+	gap: 15px;
+}
+
+.extraLargeGap {
+	gap: 20px;
 }
 
 .extraSmallFont {
@@ -90,21 +128,49 @@ button {
 }
 
 .extraLargeFont {
-	font-size: 35px;
+	font-size: 33px;
 }
 
-.smallGap {
-	gap: 5px;
+.page {
+	width: 100%;
+	height: 92.5vh;
+	flex-grow: 1;
+	overflow-y: scroll;
+	padding: 20px 10vw;
+	box-sizing: border-box;
 }
 
-.mediumGap {
-	gap: 10px;
+.foregroundElement {
+	background: var(--theme-color-3);
+	border: var(--theme-color-3-border);
 }
 
-.largeGap {
-	gap: 15px;
+.errorMessage {
+	color: #F22727;
 }
 
-.extraLargeGap {
-	gap: 20px;
+.formContainer {
+	width: 670px;
+	max-width: 90vw;
+	padding: 15px;
+	background: var(--theme-color-2);
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.oldPrice {
+	color: #AAA;
+	text-decoration: line-through;
+}
+
+.quantityInput {
+	width: 70px;
+}
+
+.cartControls {
+	margin-top: 10px;
+}
+
+.cartButton {
+	background-color: mediumseagreen !important;
 }
