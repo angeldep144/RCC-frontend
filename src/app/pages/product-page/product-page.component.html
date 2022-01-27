@@ -37,7 +37,7 @@
 			
 			<button class = "foregroundElement fullWidth mediumFont" routerLink = "/" id = "ContShopBtn">Continue Shopping</button>
 			
-			<button *ngIf = "this.userRole == 'ADMIN'" id ="edit-btn" type="button" (click)="editProduct (this.product.id)">Edit Product</button>
+			<button *ngIf = "dataService.user?.role?.role == 'ADMIN'" id ="edit-btn" type="button" (click)="editProduct (this.product.id)">Edit Product</button>
 		</div>
 	</div>
 </div>

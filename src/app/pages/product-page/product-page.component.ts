@@ -20,8 +20,6 @@ export class ProductPageComponent implements OnInit {
 	public quantityInput: number = 1;
 	cartMessage: boolean = false;
 	inCart: boolean = false;
-
-	userRole: string = "USER";
 	
 	constructor (private activatedRoute: ActivatedRoute, private apiService : ApiService, public dataService : DataService, private router: Router) {}
 	
@@ -74,12 +72,6 @@ export class ProductPageComponent implements OnInit {
 				}
 			});
 		});
-		
-		/* ADMIN TEAM ADDITION */
-		console.log(this.dataService);
-		if (this.dataService.user){
-			this.userRole = this.dataService.user.role.role;
-		}
 	}
 	
 	/* ADMIN TEAM ADDITION */
