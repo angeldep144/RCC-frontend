@@ -54,31 +54,37 @@ export class ApiService {
 				handler (error.error);
 			}
 		});
-	}
+	};
 	
 	get = (path : string) : Observable <any> => {
 		return this.httpClient.get (environment.apiBaseUrl + path, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	post = (path : string, body : any) : Observable <any> => {
 		return this.httpClient.post (environment.apiBaseUrl + path, body, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	put = (path : string, body : any) : Observable <any> => {
 		return this.httpClient.put (environment.apiBaseUrl + path, body, {
 			withCredentials: true
 		});
-	}
+	};
+	
+	patch = (path : string, body : any) : Observable <any> => {
+		return this.httpClient.patch (environment.apiBaseUrl + path, body, {
+			withCredentials: true
+		});
+	};
 	
 	delete = (path : string) : Observable <any> => {
 		return this.httpClient.delete (environment.apiBaseUrl + path, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	//session
 	
@@ -103,20 +109,13 @@ export class ApiService {
 		this.handleResponse (this.get ("product/" + id), callback, errorCallback);
 	};
 	
-	updateProductItem(formData:FormData){
-		this.httpClient.patch<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			console.log(responseBody);
-		});
+	updateProductItem (formData : FormData, callback? : Function, errorCallback? : Function) {
+		this.handleResponse (this.patch ("product", formData), callback, errorCallback);
 	}
 	
 	//Admin team addition
-	createNewProduct(formData:FormData){
-		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			if(responseBody.data){
-				console.log(responseBody);
-				this.router.navigate([`product/${responseBody.data.id}`]);
-			}
-		});
+	createNewProduct (formData : FormData, callback? : Function, errorCallback? : Function) {
+		this.handleResponse (this.post ("product", formData), callback, errorCallback);
 	}
 	
 	//user
