@@ -318,12 +318,20 @@ export class CheckoutComponent implements OnInit {
 			this.apiService.createTransaction ((body : any) : void => {
 				this.dataService.user.cart = [];
 				
+				this.dataService.updateUser (this.dataService.user);
+				
 				this.router.navigate (["/receipt/" + body.data.id]);
 			});
 		}
 	};
 	
 	ngOnInit () : void {
+		if (this.dataService.user.username === undefined || this.dataService.user.cart.length < 1) {
+			this.router.navigate (["/"]);
+			
+			return;
+		}
+		
 		this.dataService.updateCartTotals ();
 	}
 }
