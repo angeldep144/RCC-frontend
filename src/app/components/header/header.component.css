@@ -29,15 +29,15 @@
 		display: inherit;
 		font-family: Mea Culpa;
 	}
-  }
+}
 
-  @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
 	#mobile-view {
 		display: inherit;
 		font-family: Mea Culpa;
 	}
-
+	
 	#desktop-view {
 		display: none;
 	}
-  }
+}
