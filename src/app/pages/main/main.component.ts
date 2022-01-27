@@ -63,6 +63,8 @@ export class MainComponent implements OnInit {
 	};
 	
 	ngOnInit () : void {
+		this.dataService.products = [];
+		
 		this.getProducts ();
 	}
 }
