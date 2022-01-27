@@ -324,6 +324,12 @@ export class CheckoutComponent implements OnInit {
 	};
 	
 	ngOnInit () : void {
+		if (this.dataService.user.username === undefined) {
+			this.router.navigate (["/"]);
+			
+			return;
+		}
+		
 		this.dataService.updateCartTotals ();
 	}
 }
