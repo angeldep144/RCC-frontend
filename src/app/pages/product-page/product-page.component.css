@@ -1,5 +1,5 @@
 .product {
-	width: 925px;
+	width: 100%;
 	background: var(--theme-color-2);
 	box-sizing: border-box;
 	border-radius: 4px;
