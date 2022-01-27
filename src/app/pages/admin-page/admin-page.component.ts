@@ -25,9 +25,9 @@ export class AdminPageComponent implements OnInit {
 	 }
 
 	ngOnInit(): void {
-		/* if(this.dataService.user.role != "ADMIN") {
+		if(this.dataService.user?.role?.role != "ADMIN") {
 			this.router.navigate(["/"]);
-		} */
+		}
 
 		this.activatedRoute.params.subscribe(parameters => {
 			this.id = parameters['id'];

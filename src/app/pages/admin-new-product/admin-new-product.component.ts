@@ -23,7 +23,9 @@ export class AdminNewProductComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		
+		if(this.dataService.user?.role?.role != "ADMIN") {
+			this.router.navigate(["/"]);
+		}
 	}
 
 	fileInput(event: any){
