@@ -1,5 +1,5 @@
 #cartItems {
-	width: 100%px;
+	width: 700px;
 	height: 80%;
 }
 
@@ -12,8 +12,4 @@
 
 #cartTotals > div {
 	justify-content: space-between;
-}
-
-#checkout-container{
-	flex-wrap: wrap;
 }
