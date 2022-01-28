@@ -20,10 +20,32 @@ export class AdminPageComponent implements OnInit {
 	newProduct: Product = <Product>{};
 	imgInput: FileList = <FileList>{};
 
-	constructor(private apiService: ApiService, private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) { 
-
-	 }
-
+	constructor(private apiService: ApiService, private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) {}
+	
+	onPriceInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.price = event.target.value;
+	};
+	
+	onSalePriceInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.salePrice = event.target.value;
+	};
+	
+	onStockInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.stock = event.target.value;
+	};
+	
 	ngOnInit(): void {
 		if(this.dataService.user?.role?.role != "ADMIN") {
 			this.router.navigate(["/"]);

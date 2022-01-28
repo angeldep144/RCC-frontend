@@ -10,18 +10,40 @@ import { DataService } from 'src/app/services/data/data.service';
 	styleUrls: ['./admin-new-product.component.css']
 })
 export class AdminNewProductComponent implements OnInit {
-
-	newProduct: Product = <Product>{};
-	product: Product = <Product>{};
+	newProduct: Product = <Product> {};
+	
+	product: Product = <Product> {};
 	id: number = 0;
-	imgInput: FileList = <FileList>{};
+	imgInput: FileList = <FileList> {};
 
 	errMessage: string = '';
 
-	constructor(private apiService: ApiService, private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) { 
-
-	}
-
+	constructor(private apiService: ApiService, private dataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) {}
+	
+	onPriceInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.price = event.target.value;
+	};
+	
+	onSalePriceInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.salePrice = event.target.value;
+	};
+	
+	onStockInput = (event : any) : void => {
+		//todo allow backspacing but when unfocus set to minimum if still blank
+		
+		event.target.value = Math.max (event.target.min, event.target.value);
+		
+		this.newProduct.stock = event.target.value;
+	};
+	
 	ngOnInit(): void {
 		if(this.dataService.user?.role?.role != "ADMIN") {
 			this.router.navigate(["/"]);
@@ -65,13 +87,7 @@ export class AdminNewProductComponent implements OnInit {
 		}
 		formData.append("imageUrl", this.newProduct.imageUrl);
 		formData.append("file", file);
-
-
-		console.log("new product");
-		console.log(this.newProduct);
-
-		console.log("product");
-		console.log(this.product);
+		
 		if(this.newProduct.price < this.newProduct.salePrice){
 			console.log("price error hit.")
 			this.errMessage = "Sale price cannot be higher than price.";
