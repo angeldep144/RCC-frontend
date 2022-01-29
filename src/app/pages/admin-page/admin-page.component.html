@@ -27,19 +27,19 @@
 			<label for="sale-price">Regular Price</label>
 			<span>
 				<label class="usd-sign" for="price-input">$</label>
-				<input (input) = "onPriceInput ($event);" type="number" id="productPrice" min = "0.01" step="0.01" class = "edit price-input" value="{{ this.product.price }}"
+				<input type="number" id="productPrice" min = "0.01" step="0.01" class = "edit price-input" value="{{ this.product.price }}"
 				[(ngModel)]="this.newProduct.price"  name="productPrice" required>
 			</span>
 			<br>
 			<label for="sale-input">Sale Price</label>
 			<span>
 				<label class="usd-sign" for="sale-input">$</label>
-				<input (input) = "onSalePriceInput ($event);" type="number" id="salePrice" class = "edit sale-input" min = "0.01" step="0.01" max="{{this.newProduct.price}}" value="{{ this.product.salePrice }}"
+				<input type="number" id="salePrice" class = "edit sale-input" min = "0.01" step="0.01" max="{{this.newProduct.price}}" value="{{ this.product.salePrice }}"
 				[(ngModel)]="this.newProduct.salePrice"  placeholder="No current sale" name="productSalePrice">
 			</span>
 			<br>
 			<label for="product-inventory">Product in Stock</label>
-			<input (input) = "onStockInput ($event);" type="number" id="product-inventory" class = "edit stock-input" min = "0" step="1" value="{{ this.product.stock }}"
+			<input type="number" id="product-inventory" class = "edit stock-input" min = "0" step="1" value="{{ this.product.stock }}"
 			[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock">
 			
 			<div id="btn-container">
