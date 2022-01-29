@@ -14,6 +14,12 @@ import { DataService } from "../data/data.service";
 export class ApiService {
 	constructor (private httpClient : HttpClient, private router : Router, public dataService: DataService) {}
 	
+	//handle response is used to manage all http requests/responses
+	//all requests should be sent with a call to handleResponse using one of the get/post/etc. methods in the ApiService
+	//handleResponse uses the JsonResponse sent from the backend to handle the response
+	//if success is true in the JsonResponse, the callback is called
+	//if success is false, an alert is shown, unless errorCallback is defined
+	//if errorCallback is defined, it is called instead of the alert showing
 	handleResponse = async (response : Observable <any>, callback? : Function, errorCallback? : Function) : Promise <any> => {
 		const handler = async (body : any) : Promise <any> => {
 			//todo remove, for debugging/presentation
