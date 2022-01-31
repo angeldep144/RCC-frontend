@@ -21,6 +21,10 @@
 
 #cartTotals-mobile{
 	width: 100%;
+	padding: 15px;
+	background: var(--theme-color-2);
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 @media screen and (min-width: 650px) {
