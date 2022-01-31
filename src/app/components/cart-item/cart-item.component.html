@@ -1,4 +1,4 @@
-<div class = "cartItem flex">
+<div class = "cartItem flex" id="desktop-view">
 	<div class = "cartItemInfo flexLeft largeGap">
 		<div class = "productImageContainer flex">
 			<img class = "productImage" src = {{cartItem.product.imageUrl}}>
@@ -21,5 +21,33 @@
 		<input [(ngModel)] = "cartItem.quantity" (input) = "onQuantityInput ($event);" class = "quantityInput foregroundElement mediumFont" type = "number">
 		
 		<a class = "mediumFont" (click) = "removeFromCart ();">🗑️</a>
+	</div>
+</div>
+
+
+
+<div class = "cartItem-mobile flex" id="mobile-view">
+	<div class = "cartItemInfo flexLeft largeGap" id="cartItemInfo-mobile">
+		<p class = "mediumFont">{{ cartItem.product.name }}</p>
+		<div class = "productImageContainer-mobile flex">
+			<img class = "productImage-mobile" src = {{cartItem.product.imageUrl}}>
+		</div>
+		<span class="mobile-view-info">
+			<div id="info-mobile" class = "productInfo flexColumnLeft smallGap">
+		
+				<div class = "flex mediumGap">
+					<p class = "largeFont">{{ (cartItem.product.salePrice ? cartItem.product.salePrice : cartItem.product.price) | currency }}</p>
+					
+					<p *ngIf = "cartItem.product.salePrice" class = "oldPrice largeFont">{{ cartItem.product.price | currency }}</p>
+				</div>
+			</div>
+	
+			<div id="trash-mobile" class = "flex mediumGap">
+				<input [(ngModel)] = "cartItem.quantity" (input) = "onQuantityInput ($event);" class = "quantityInput foregroundElement mediumFont" type = "number">
+				
+				<a class = "mediumFont" (click) = "removeFromCart ();">🗑️</a>
+			</div>
+		</span>
+		
 	</div>
 </div>

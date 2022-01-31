@@ -7,6 +7,11 @@
 	background: var(--theme-color-2);
 }
 
+#searchInput-mobile{
+	width: 100%;
+	background: var(--theme-color-2);
+}
+
 #searchButton {
 	height: 100%;
 	background: var(--theme-color-2);
@@ -20,4 +25,25 @@
 	position: fixed;
 	bottom: 5%;
 	right: 5%;
+}
+
+@media screen and (min-width: 650px) {
+	.mobile-view {
+		display: none;
+	}
+
+	.desktop-view {
+		display: inherit;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	 
+	.mobile-view {
+		display: inherit;
+	}
+	
+	.desktop-view {
+		display: none;
+	}
 }
