@@ -1,4 +1,13 @@
-.product {
+#desktop-view {
+	margin-top: 15px;
+	background: var(--theme-background-color);
+	box-sizing: border-box;
+	border-radius: 4px;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+#mobile-view {
 	margin-top: 15px;
 	background: var(--theme-background-color);
 	box-sizing: border-box;
@@ -8,8 +17,27 @@
     padding-bottom: 0;
 }
 
+#price-input-container{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.sale-input{
+	width: 5em;
+}
+
+.price-input{
+	width: 5em;
+}
+
+#price-container{
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+}
+
 .usd-sign{
-	
+	margin-left: 8px;
 	padding: 3px 8px 6px 0px;
 	
 }
@@ -124,4 +152,25 @@ form span {
 
 .product form label {
 	padding-bottom: 5px;
+}
+
+@media screen and (min-width: 650px) {
+	#mobile-view {
+		display: none;
+	}
+
+	#desktop-view {
+		display: inherit;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	 
+	#mobile-view {
+		display: inherit;
+	}
+	
+	#desktop-view {
+		display: none;
+	}
 }
