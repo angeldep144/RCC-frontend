@@ -15,7 +15,7 @@
 			<a id="logout-btn" (click) = "logout ();">Logout</a>
 		</div>
 		
-		<div *ngIf = "!dataService.user.username && router.url !== '/login' && router.url !== '/register'" class = "flex largeGap">
+		<div *ngIf = "!dataService.user.username" class = "flex largeGap">
 			<a id="register-btn" routerLink = "/register">Register</a>
 			
 			<a id="login-btn" routerLink = "/login">Login</a>

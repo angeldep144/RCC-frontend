@@ -14,6 +14,12 @@ import { DataService } from "../data/data.service";
 export class ApiService {
 	constructor (private httpClient : HttpClient, private router : Router, public dataService: DataService) {}
 	
+	//handle response is used to manage all http requests/responses
+	//all requests should be sent with a call to handleResponse using one of the get/post/etc. methods in the ApiService
+	//handleResponse uses the JsonResponse sent from the backend to handle the response
+	//if success is true in the JsonResponse, the callback is called
+	//if success is false, an alert is shown, unless errorCallback is defined
+	//if errorCallback is defined, it is called instead of the alert showing
 	handleResponse = async (response : Observable <any>, callback? : Function, errorCallback? : Function) : Promise <any> => {
 		const handler = async (body : any) : Promise <any> => {
 			//todo remove, for debugging/presentation
@@ -54,31 +60,37 @@ export class ApiService {
 				handler (error.error);
 			}
 		});
-	}
+	};
 	
 	get = (path : string) : Observable <any> => {
 		return this.httpClient.get (environment.apiBaseUrl + path, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	post = (path : string, body : any) : Observable <any> => {
 		return this.httpClient.post (environment.apiBaseUrl + path, body, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	put = (path : string, body : any) : Observable <any> => {
 		return this.httpClient.put (environment.apiBaseUrl + path, body, {
 			withCredentials: true
 		});
-	}
+	};
+	
+	patch = (path : string, body : any) : Observable <any> => {
+		return this.httpClient.patch (environment.apiBaseUrl + path, body, {
+			withCredentials: true
+		});
+	};
 	
 	delete = (path : string) : Observable <any> => {
 		return this.httpClient.delete (environment.apiBaseUrl + path, {
 			withCredentials: true
 		});
-	}
+	};
 	
 	//session
 	
@@ -103,20 +115,13 @@ export class ApiService {
 		this.handleResponse (this.get ("product/" + id), callback, errorCallback);
 	};
 	
-	updateProductItem(formData:FormData){
-		this.httpClient.patch<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			console.log(responseBody);
-		});
+	updateProductItem (formData : FormData, callback? : Function, errorCallback? : Function) {
+		this.handleResponse (this.patch ("product", formData), callback, errorCallback);
 	}
 	
 	//Admin team addition
-	createNewProduct(formData:FormData){
-		this.httpClient.post<any>("http://localhost:81/product", formData).subscribe(responseBody => {
-			if(responseBody.data){
-				console.log(responseBody);
-				this.router.navigate([`product/${responseBody.data.id}`]);
-			}
-		});
+	createNewProduct (formData : FormData, callback? : Function, errorCallback? : Function) {
+		this.handleResponse (this.post ("product", formData), callback, errorCallback);
 	}
 	
 	//user
