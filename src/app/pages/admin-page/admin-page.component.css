@@ -22,14 +22,6 @@
 	justify-content: space-evenly;
 }
 
-.sale-input{
-	width: 5em;
-}
-
-.price-input{
-	width: 5em;
-}
-
 #price-container{
 	display: flex;
 	justify-content: space-evenly;
@@ -37,14 +29,16 @@
 }
 
 .usd-sign{
-	margin-left: 8px;
-	padding: 3px 8px 6px 0px;
+	margin-left: 8Çpx;
+	padding: 8px 1px 6px 0px;
 	
 }
 
 .productImageContainer {
-	padding: 10px;
+	padding: 5px;
 	position: relative;
+	max-width: 350px;
+	max-height: 350px;
 }
 
 .productImage {
@@ -112,6 +106,16 @@
 .edit{
 	background: var(--theme-color-2);
 	color: var(--theme-color-4);
+}
+
+.price-input, .sale-input, .stock-input {
+	width: 8em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+label {
+	padding: 2px;
 }
 
 #FlexBox {
