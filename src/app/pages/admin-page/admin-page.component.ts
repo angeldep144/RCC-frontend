@@ -54,7 +54,6 @@ export class AdminPageComponent implements OnInit {
 		this.activatedRoute.params.subscribe(parameters => {
 			this.id = parameters['id'];
 			this.apiService.getProduct (parseInt (parameters["id"]), (body : any) : void => {
-				console.log(body);
 				this.product = body.data;
 				this.newProduct = body.data;
 			})
@@ -72,11 +71,9 @@ export class AdminPageComponent implements OnInit {
 
 		if(this.newProduct.salePrice){
 			this.newProduct.salePrice = +this.newProduct.salePrice.toFixed(2);
-			console.log(this.newProduct.salePrice);
 		}
 			
 		if(this.newProduct.price < this.newProduct.salePrice){
-			console.log("price error hit.")
 			this.errMessage = "Sale price cannot be higher than price.";
 		}
 
@@ -86,7 +83,6 @@ export class AdminPageComponent implements OnInit {
 		
 		if(this.newProduct.price){
 			this.newProduct.price = +this.newProduct.price.toFixed(2);
-			console.log(this.newProduct.price);
 		}else{
 			this.newProduct.price = 0.93;
 		}
@@ -106,11 +102,7 @@ export class AdminPageComponent implements OnInit {
 		formData.append("file", file);
 		formData.append("id", JSON.stringify(this.newProduct.id));
 
-		console.log("new product");
-		console.log(this.newProduct);
 
-		console.log("product");
-		console.log(this.product);
 
 		this.apiService.updateProductItem (formData);
 	}

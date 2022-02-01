@@ -62,14 +62,12 @@ export class AdminNewProductComponent implements OnInit {
 
 		if(this.newProduct.salePrice){
 			this.newProduct.salePrice = +this.newProduct.salePrice.toFixed(2);
-			console.log(this.newProduct.salePrice);
 		}
 			
 		
 		
 		if(this.newProduct.price){
 			this.newProduct.price = +this.newProduct.price.toFixed(2);
-			console.log(this.newProduct.price);
 		}else{
 			this.newProduct.price = 0.93;
 		}
@@ -89,7 +87,6 @@ export class AdminNewProductComponent implements OnInit {
 		formData.append("file", file);
 		
 		if(this.newProduct.price < this.newProduct.salePrice){
-			console.log("price error hit.")
 			this.errMessage = "Sale price cannot be higher than price.";
 		}
 
