@@ -79,7 +79,7 @@
 				<label for="product-inventory">Product in Stock</label>
 				<span>
 					<input type="number" id="product-inventory" class = "edit stock-input" min = "0" step="1" value="{{ this.product.stock }}"
-					[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock">
+					[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock" required>
 				</span>
 
 				<br>

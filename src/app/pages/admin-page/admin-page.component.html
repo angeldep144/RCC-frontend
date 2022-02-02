@@ -40,7 +40,7 @@
 			<br>
 			<label for="product-inventory">Product in Stock</label>
 			<input type="number" id="product-inventory" class = "edit stock-input" min = "0" step="1" value="{{ this.product.stock }}"
-			[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock">
+			[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock" required>
 			
 			<div id="btn-container">
 				<button type="submit" id="update-btn">Update product</button>
@@ -92,7 +92,7 @@
 			<br>
 			<label for="product-inventory">Product in Stock</label>
 			<input type="number" id="product-inventory" class = "edit stock-input" min = "0" step="1" value="{{ this.product.stock }}"
-			[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock">
+			[(ngModel)]="this.newProduct.stock"  placeholder="Inventory in stock" name="productStock" required>
 			
 			<div id="btn-container">
 				<button type="submit" id="update-btn">Update product</button>
